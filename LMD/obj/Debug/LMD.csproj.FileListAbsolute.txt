@@ -1,0 +1,126 @@
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\LMD.dll.config
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\LMD.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\LMD.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\csc.exe
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\csc.exe.config
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\csc.rsp
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\csi.exe
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\csi.exe.config
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\csi.rsp
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.AppContext.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Console.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.IO.Compression.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.IO.Pipes.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.Claims.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.ValueTuple.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Xml.XPath.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\vbc.exe
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\vbc.exe.config
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\vbc.rsp
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\VBCSCompiler.exe
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\Entidades.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\Servicios.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\WebGrease.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\AccesoDatos.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\Entidades.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\Servicios.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\bin\AccesoDatos.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\obj\Debug\LMD.csprojAssemblyReference.cache
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\obj\Debug\LMD.csproj.CoreCompileInputs.cache
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\obj\Debug\LMD.csproj.CopyComplete
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\obj\Debug\LMD.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\LMD\obj\Debug\LMD.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\LMD.dll.config
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\LMD.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\LMD.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\csc.exe
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\csc.exe.config
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\csc.rsp
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\csi.exe
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\csi.exe.config
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\csi.rsp
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.AppContext.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Console.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.IO.Compression.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.IO.Pipes.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.Claims.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.ValueTuple.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Xml.XPath.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\vbc.exe
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\vbc.exe.config
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\vbc.rsp
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\VBCSCompiler.exe
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\Entidades.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\Servicios.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\WebGrease.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\AccesoDatos.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\Entidades.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\Servicios.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\bin\AccesoDatos.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\obj\Debug\LMD.csprojAssemblyReference.cache
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\obj\Debug\LMD.csproj.CoreCompileInputs.cache
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\obj\Debug\LMD.csproj.CopyComplete
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\obj\Debug\LMD.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\LMD\obj\Debug\LMD.pdb

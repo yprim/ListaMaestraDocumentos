@@ -1,0 +1,198 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LMD.SiteMaster" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="cleartype" content="on" />
+
+  
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <%-- Estilos con formato UCR  --%>
+    <link href="css/Lanamme.css" rel="stylesheet" />  
+    <link href="css/inicio.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!--Dialogos de Mensaje ref:https://nakupanda.github.io/bootstrap3-dialog/#available-options -->
+    <link href="css/bootstrap-dialog.css" rel="stylesheet" />
+
+    <script src='<%=Page.ResolveUrl("~/Scripts/jquery-1.9.1.js") %>'></script>
+    <!-- Table -->
+    <link href="Content/DataTables/datatables.min.css" rel="stylesheet" />
+    <script src='<%=Page.ResolveUrl("~/Scripts/datatables.min.js") %>'></script>
+    <%--<script src='<%=Page.ResolveUrl("~/Scripts/dataSourcePlugins.js") %>'></script>--%>
+
+    <script src='<%=Page.ResolveUrl("~/Scripts/bootstrap-dialog.js") %>'></script>
+    <script src='<%=Page.ResolveUrl("~/Scripts/Dialogo.js") %>'></script>
+    
+
+    <title>Lista Maestra de Documentos</title>
+    <link rel="icon" href='<%=Page.ResolveUrl("~/Imagenes/favicon.ico") %>' />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <div class="logos">
+                <nav>
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="left" href="http://www.ucr.ac.cr/">
+                                <img src='<%=Page.ResolveUrl("~/Imagenes/logoUCR.png") %>' />
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div>
+
+                            <div class="navbar-header navbar-right">
+
+                                <div class="bottom-aligner">
+                                    <div class="bottom-content">
+                                        <h4 style="font-family: 'Arial Rounded MT Bold'; color: #FFFFFF;">Lista Maestra de Documentos</h4>
+                                    </div>
+                                </div>
+                                <a href="http://www.lanamme.ucr.ac.cr/">
+                                    <img src='<%=Page.ResolveUrl("~/Imagenes/logoLanamme.png") %>' /></a>
+
+
+                            </div>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+
+
+            </div>
+            <div id="menu" class="menu" runat="server">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed btn btn-danger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                            <%------------------------------MENU DE ADMINISTRADOR--------------------------%>
+                            <div id="MenuAdministrador" runat="server">
+                                <ul class="nav navbar-nav">
+                                     <li>
+                                        <a href='<%=Page.ResolveUrl("~/Reuniones/AdministrarReunion.aspx") %>'>Reuniones</a>
+                                    </li>
+                                       <li>
+                                        <a href='<%=Page.ResolveUrl("~/Hallazgos/AdministrarReunionHallazgo.aspx") %>'>Acuerdos</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Editables<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarTipo.aspx") %>'>Tipo</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx") %>'>Estado</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarElementoRevisar.aspx") %>'>Elemento a Revisar</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarUsuario.aspx") %>'>Usuario</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href='<%=Page.ResolveUrl("~/Ayuda.aspx") %>'>Ayuda</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <%------------------------------FIN DE MENU DE ADMINISTRADOR ---------------------------%>
+
+                            <%------------------------------MENU DE ASISTENTE--------------------------%>
+                            <div id="MenuAsistente" runat="server">
+                                <ul class="nav navbar-nav">
+                                     <li>
+                                        <a href='<%=Page.ResolveUrl("~/Reuniones/AdministrarReunion.aspx") %>'>Reuniones</a>
+                                    </li>
+                                       <li>
+                                        <a href='<%=Page.ResolveUrl("~/Hallazgos/AdministrarReunionHallazgo.aspx") %>'>Hallazgos</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Editables<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarTipo.aspx") %>'>Tipo</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx") %>'>Estado</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarElementoRevisar.aspx") %>'>Elemento a Revisar</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarUsuario.aspx") %>'>Usuario</a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href='<%=Page.ResolveUrl("~/Ayuda.aspx") %>'>Ayuda</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <%------------------------------FIN DE MENU DE ASISTENTE ---------------------------%>
+
+                            <%------------------------------FIN DE LOS MENUS ---------------------------%>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a><asp:Label ID="username" Font-Bold="true" text="Bienvenid@" runat="server"></asp:Label></a>
+                                </li>
+
+                                <li>
+                                    <asp:Button ID="BtnSalir" runat="server" CssClass="btn btn-primary" OnClick="BtnSalir_Click" Text="Salir" CausesValidation="False" UseSubmitBehavior="False" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+            <div class="contenido">
+                <%--Elementos para cada pagina --%>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    <!-- mensaje -->
+                    <div id="divMensaje" runat="server" class="alert alert-success alert-dismissable" style="display: none">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                    </div>
+                    <!-- fin mensaje -->
+                </asp:ContentPlaceHolder>
+                <div class="modal modal-sm modal-static fade" id="ModalAlerta" role="alertdialog">
+                    <div class="modal-dialog">
+                    </div>
+                </div>
+            </div>
+            <div class="piePagina">
+
+                <h6 style="color: #fff; text-align: center;">&nbsp&nbsp&nbsp&nbsp&copy; <%: DateTime.Now.Year %>  Laboratorio Nacional de Materiales y Modelos Estructurales</h6>
+                <%--<h6 style="color: #fff; text-align: center;">Unidad Tecnología de Información UTI</h6>--%>
+
+            </div>
+        </div>
+        <div style="display: none">
+            <asp:Label ID="mensaje" Text="" runat="server"></asp:Label>
+            <asp:Label runat="server" ID="alert" Text="" Visible="true"></asp:Label>
+        </div>
+       <!--  Bootstrap -->
+        <script src='<%=Page.ResolveUrl("~/Scripts/bootstrap.js") %>'></script>
+        <script src='<%=Page.ResolveUrl("~/Scripts/bootstrap-dialog.js") %>'></script>
+        <!-- Bootstrap PDF Viewer solo para visualizar archivos -->
+        <script src='<%=Page.ResolveUrl("~/Scripts/pdf.js") %>'></script>
+
+    </form>
+
+
+
+
+    <%--DEntro de este espacio se ponen los scripts que tienen que correr al cargar la pagina  --%>
+    <asp:ContentPlaceHolder ID="ScriptContent" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

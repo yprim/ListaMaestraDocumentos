@@ -1,0 +1,22 @@
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\bin\Debug\Servicios.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\bin\Debug\Servicios.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\bin\Debug\AccesoDatos.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\bin\Debug\Entidades.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\bin\Debug\AccesoDatos.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\bin\Debug\Entidades.pdb
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\obj\Debug\Servicios.csprojAssemblyReference.cache
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\obj\Debug\Servicios.dll
+C:\Users\pmena\Desktop\lista maestra de documentos\LMD\Servicios\obj\Debug\Servicios.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\bin\Debug\Servicios.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\bin\Debug\Servicios.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\bin\Debug\AccesoDatos.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\bin\Debug\Entidades.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\bin\Debug\AccesoDatos.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\bin\Debug\Entidades.pdb
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\obj\Debug\Servicios.csprojAssemblyReference.cache
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\obj\Debug\Servicios.csproj.CopyComplete
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\obj\Debug\Servicios.dll
+C:\Users\pmena\Documents\GitHub\ListaMaestraDeDocumentos\LMD\Servicios\obj\Debug\Servicios.pdb
