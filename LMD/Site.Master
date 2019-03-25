@@ -56,7 +56,10 @@
 
                                 <div class="bottom-aligner">
                                     <div class="bottom-content">
-                                        <h4 style="font-family: 'Arial Rounded MT Bold'; color: #FFFFFF;">Lista Maestra de Documentos</h4>
+                               
+                                          <h4 style="font-family: 'Arial Rounded MT Bold'; color: #FFFFFF;">
+                                 <asp:Label ID="Label1" Font-Bold="true" text="Lista Maestra de Documentos" runat="server"></asp:Label>
+                                              </h4>
                                     </div>
                                 </div>
                                 <a href="http://www.lanamme.ucr.ac.cr/">

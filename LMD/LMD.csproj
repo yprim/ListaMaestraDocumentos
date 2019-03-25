@@ -90,7 +90,7 @@
     <Content Include="css\Calendario.css" />
     <Content Include="css\inicio.css" />
     <Content Include="css\Lanamme.css" />
-    <Content Include="LaboratorioFuerza.aspx" />
+    <Content Include="Inicio.aspx" />
     <Content Include="LaboratorioEnsayos.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="Error\Error.aspx" />
@@ -131,7 +131,6 @@
     <Content Include="Scripts\pdf.js" />
     <Content Include="Scripts\transition.js" />
     <Content Include="Site.Master" />
-    <Content Include="UnidadPuentes.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -151,12 +150,12 @@
     <Compile Include="Configuracion\Configuracion.aspx.designer.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LaboratorioFuerza.aspx.cs">
-      <DependentUpon>LaboratorioFuerza.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LaboratorioFuerza.aspx.designer.cs">
-      <DependentUpon>LaboratorioFuerza.aspx</DependentUpon>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="LaboratorioEnsayos.aspx.cs">
       <DependentUpon>LaboratorioEnsayos.aspx</DependentUpon>
@@ -196,13 +195,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="UnidadPuentes.aspx.cs">
-      <DependentUpon>UnidadPuentes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UnidadPuentes.aspx.designer.cs">
-      <DependentUpon>UnidadPuentes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
   </ItemGroup>

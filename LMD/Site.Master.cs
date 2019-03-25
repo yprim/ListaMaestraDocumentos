@@ -8,14 +8,20 @@ using System.Web.UI.WebControls;
 namespace LMD
 {
     public partial class SiteMaster : MasterPage
+
     {
+   
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (Session["nombreCompleto"] != null)
             {
                 //username.InnerText = "Bienvenid@ " + Session["nombreCompleto"].ToString();
                 username.Text = "Bienvenid@ " + Session["nombreCompleto"].ToString();
 
+            
+                    Label1.Text = "Lista Maestra de Documentos " + Session["nombreSistema"].ToString();
+               
             }
         }
 

@@ -15,7 +15,7 @@
 
 
         <div class="grid_3">
-              <a href="<%= Page.ResolveUrl("~/LaboratorioEnsayos.aspx") %>">
+              <a id="le" onserverclick="laboratorio_Ensayos_Click" runat="server">
                 <div class="fmcircle_out">
                     <div class="fmcircle_border">
                         <div class="fmcircle_in fmcircle_red">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="grid_3">
-           <a href="<%= Page.ResolveUrl("~/UnidadPuentes.aspx") %>">
+           <a id="up" onserverclick="unidad_Puentes_Click" runat="server">
                 <div class="fmcircle_out">
                     <div class="fmcircle_border">
                         <div class="fmcircle_in fmcircle_red">
@@ -48,7 +48,7 @@
         </div>
 
         <div class="grid_3">
-           <a href="<%= Page.ResolveUrl("~/LaboratorioFuerza.aspx") %>">
+           <a id="lf" onserverclick="laboratorio_Fuerza_Click" runat="server">
                 <div class="fmcircle_out">
                     <div class="fmcircle_border">
                         <div class="fmcircle_in fmcircle_red">

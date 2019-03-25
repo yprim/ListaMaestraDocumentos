@@ -11,7 +11,7 @@ namespace LMD
 {
 
 
-    public partial class UnidadPuentes
+    public partial class Inicio
     {
     }
 }

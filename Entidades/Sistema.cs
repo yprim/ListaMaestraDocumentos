@@ -8,11 +8,14 @@ namespace Entidades
 {
     /// <summary>
     /// Priscilla Mena
-    /// 07/09/2018
+    /// 25/03/2019
     /// clase para administrar la entidad de Sistema
     /// </summary>
     public class Sistema
     {
+       public int idSistema { get; set; }
+       public String nombre { get; set; }
+
 
     }
 }

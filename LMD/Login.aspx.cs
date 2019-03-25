@@ -23,6 +23,8 @@ namespace LMD
             Utilidades.SetLogDirectory();
             Session["rol"] = null;
             Session["nombreCompleto"] = null;
+            Session["idSistema"] = 0;
+            Session["nombreSistema"] = "";
 
         }
         #endregion
