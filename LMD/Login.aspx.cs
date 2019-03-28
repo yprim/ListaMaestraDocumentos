@@ -23,6 +23,7 @@ namespace LMD
             Utilidades.SetLogDirectory();
             Session["rol"] = null;
             Session["nombreCompleto"] = null;
+            Session["tituloSistema"] =
             Session["idSistema"] = 0;
             Session["nombreSistema"] = "";
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Servicios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,10 +11,20 @@ namespace LMD
 {
     public partial class Default : System.Web.UI.Page
     {
+        #region variables globales
+        SistemaServicios sistemaServicios = new SistemaServicios();
+        public static int rol = 0;
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene el ElementoRevisar
+            //si no tiene permiso de ver la pagina se redirecciona a login
+            int[] rolesPermitidos = { 2, 9 };
+            Utilidades.escogerMenu(Page, rolesPermitidos);
+
             Page.Master.FindControl("menu").Visible = false;
-            Session["nombreSistema"] = "";
+            Session["tituloSistema"] = "";
         }
 
         /// <summary>
@@ -28,8 +40,11 @@ namespace LMD
         /// <returns></returns>
         protected void laboratorio_Ensayos_Click(object sender, EventArgs e)
         {
-            Session["nombreSistema"] = " para laboratorio de ensayos";
+            Session["tituloSistema"] = " para laboratorio de ensayos";
             String url = Page.ResolveUrl("~/Inicio.aspx");
+            Sistema sistema = sistemaServicios.getSistema("laboratorio de ensayos");
+            Session["idSistema"] = sistema.idSistema;
+            Session["nombreSistema"] = sistema.nombre;
             Response.Redirect(url);
         }
 
@@ -47,8 +62,11 @@ namespace LMD
         /// <returns></returns>
         protected void laboratorio_Fuerza_Click(object sender, EventArgs e)
         {
-            Session["nombreSistema"] = " para laboratorio de fuerza";
+            Session["tituloSistema"] = " para laboratorio de fuerza";
             String url = Page.ResolveUrl("~/Inicio.aspx");
+            Sistema sistema = sistemaServicios.getSistema("laboratorio de fuerza");
+            Session["idSistema"] = sistema.idSistema;
+            Session["nombreSistema"] = sistema.nombre;
             Response.Redirect(url);
         }
 
@@ -66,8 +84,11 @@ namespace LMD
         /// <returns></returns>
         protected void unidad_Puentes_Click(object sender, EventArgs e)
         {
-            Session["nombreSistema"] = " para unidad de puentes";
+            Session["tituloSistema"] = " para unidad de puentes";
             String url = Page.ResolveUrl("~/Inicio.aspx");
+            Sistema sistema = sistemaServicios.getSistema("unidad de puentes");
+            Session["idSistema"] = sistema.idSistema;
+            Session["nombreSistema"] = sistema.nombre;
             Response.Redirect(url);
         }
 

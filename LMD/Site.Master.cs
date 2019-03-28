@@ -20,7 +20,7 @@ namespace LMD
                 username.Text = "Bienvenid@ " + Session["nombreCompleto"].ToString();
 
             
-                    Label1.Text = "Lista Maestra de Documentos " + Session["nombreSistema"].ToString();
+                    Label1.Text = "Lista Maestra de Documentos " + Session["tituloSistema"].ToString();
                
             }
         }
