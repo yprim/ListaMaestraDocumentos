@@ -75,6 +75,12 @@
   <ItemGroup>
     <Content Include="ArchivoBaseDatos.txt" />
     <Content Include="Ayuda.aspx" />
+    <Content Include="Catalogos\AdministrarAprobador.aspx" />
+    <Content Include="Catalogos\AdministrarAutor.aspx" />
+    <Content Include="Catalogos\AdministrarEstado.aspx" />
+    <Content Include="Catalogos\AdministrarResponsable.aspx" />
+    <Content Include="Catalogos\AdministrarRevision.aspx" />
+    <Content Include="Catalogos\AdministrarUbicacion.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="Content\DataTables\datatables.min.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
@@ -90,6 +96,7 @@
     <Content Include="css\Calendario.css" />
     <Content Include="css\inicio.css" />
     <Content Include="css\Lanamme.css" />
+    <Content Include="DocumentosExternos\AdministrarDocumentoExterno.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="LaboratorioEnsayos.aspx" />
     <Content Include="Menu.aspx" />
@@ -111,6 +118,8 @@
     <Content Include="Imagenes\logo_LANAMME-140x140.png" />
     <Content Include="Imagenes\UCR informe.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Procedimientos\AdministrarProcedimiento.aspx" />
+    <Content Include="Registros\AdministrarRegistro.aspx" />
     <Content Include="Scripts\abrirfile.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
@@ -143,12 +152,61 @@
     <Compile Include="Ayuda.aspx.designer.cs">
       <DependentUpon>Ayuda.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\AdministrarAprobador.aspx.cs">
+      <DependentUpon>AdministrarAprobador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarAprobador.aspx.designer.cs">
+      <DependentUpon>AdministrarAprobador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarAutor.aspx.cs">
+      <DependentUpon>AdministrarAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarAutor.aspx.designer.cs">
+      <DependentUpon>AdministrarAutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarEstado.aspx.cs">
+      <DependentUpon>AdministrarEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarEstado.aspx.designer.cs">
+      <DependentUpon>AdministrarEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarResponsable.aspx.cs">
+      <DependentUpon>AdministrarResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarResponsable.aspx.designer.cs">
+      <DependentUpon>AdministrarResponsable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarRevision.aspx.cs">
+      <DependentUpon>AdministrarRevision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarRevision.aspx.designer.cs">
+      <DependentUpon>AdministrarRevision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarUbicacion.aspx.cs">
+      <DependentUpon>AdministrarUbicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AdministrarUbicacion.aspx.designer.cs">
+      <DependentUpon>AdministrarUbicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Configuracion.aspx.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Configuracion\Configuracion.aspx.designer.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentosExternos\AdministrarDocumentoExterno.aspx.cs">
+      <DependentUpon>AdministrarDocumentoExterno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentosExternos\AdministrarDocumentoExterno.aspx.designer.cs">
+      <DependentUpon>AdministrarDocumentoExterno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -188,7 +246,21 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Procedimientos\AdministrarProcedimiento.aspx.cs">
+      <DependentUpon>AdministrarProcedimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procedimientos\AdministrarProcedimiento.aspx.designer.cs">
+      <DependentUpon>AdministrarProcedimiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\AdministrarRegistro.aspx.cs">
+      <DependentUpon>AdministrarRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\AdministrarRegistro.aspx.designer.cs">
+      <DependentUpon>AdministrarRegistro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,9 +321,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Catalogos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

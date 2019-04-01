@@ -75,7 +75,7 @@
 
 
             </div>
-            <div id="menu" class="menu" runat="server">
+             <div id="menu" class="menu" runat="server">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -92,20 +92,26 @@
                             <div id="MenuAdministrador" runat="server">
                                 <ul class="nav navbar-nav">
                                      <li>
-                                        <a href='<%=Page.ResolveUrl("~/Reuniones/AdministrarReunion.aspx") %>'>Reuniones</a>
+                                        <a href='<%=Page.ResolveUrl("~/Registros/AdministrarRegistro.aspx") %>'>Registros</a>
+                                    </li>
+                                     <li>
+                                        <a href='<%=Page.ResolveUrl("~/Procedimientos/AdministrarProcedimiento.aspx") %>'>Procedimientos</a>
                                     </li>
                                        <li>
-                                        <a href='<%=Page.ResolveUrl("~/Hallazgos/AdministrarReunionHallazgo.aspx") %>'>Acuerdos</a>
+                                        <a href='<%=Page.ResolveUrl("~/DocumentosExternos/AdministrarDocumentoExterno.aspx") %>'>Documentos Extermos</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Editables<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarTipo.aspx") %>'>Tipo</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarAprobador.aspx") %>'>Aprobador</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarAutor.aspx") %>'>Autor</a></li>
                                             <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx") %>'>Estado</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarElementoRevisar.aspx") %>'>Elemento a Revisar</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarUsuario.aspx") %>'>Usuario</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarResponsable.aspx") %>'>Responsable</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarRevision.aspx") %>'>Revision</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarUbicacion.aspx") %>'>Ubicacion</a></li>
+                                            </ul>
+                                            </li>
+
                                    
                                     <li>
                                         <a href='<%=Page.ResolveUrl("~/Ayuda.aspx") %>'>Ayuda</a>
@@ -116,22 +122,28 @@
 
                             <%------------------------------MENU DE ASISTENTE--------------------------%>
                             <div id="MenuAsistente" runat="server">
-                                <ul class="nav navbar-nav">
+                               <ul class="nav navbar-nav">
                                      <li>
-                                        <a href='<%=Page.ResolveUrl("~/Reuniones/AdministrarReunion.aspx") %>'>Reuniones</a>
+                                        <a href='<%=Page.ResolveUrl("~/Registros/AdministrarRegistro.aspx") %>'>Registros</a>
+                                    </li>
+                                     <li>
+                                        <a href='<%=Page.ResolveUrl("~/Procedimientos/AdministrarProcedimiento.aspx") %>'>Procedimientos</a>
                                     </li>
                                        <li>
-                                        <a href='<%=Page.ResolveUrl("~/Hallazgos/AdministrarReunionHallazgo.aspx") %>'>Hallazgos</a>
+                                        <a href='<%=Page.ResolveUrl("~/DocumentosExternos/AdministrarDocumentoExterno.aspx") %>'>Documentos Extermos</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Editables<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarTipo.aspx") %>'>Tipo</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarAprobador.aspx") %>'>Aprobador</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarAutor.aspx") %>'>Autor</a></li>
                                             <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx") %>'>Estado</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarElementoRevisar.aspx") %>'>Elemento a Revisar</a></li>
-                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarUsuario.aspx") %>'>Usuario</a></li>
-                                        </ul>
-                                    </li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarResponsable.aspx") %>'>Responsable</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarRevision.aspx") %>'>Revision</a></li>
+                                            <li><a href='<%=Page.ResolveUrl("~/Catalogos/AdministrarUbicacion.aspx") %>'>Ubicacion</a></li>
+                                            </ul>
+                                            </li>
+
                                    
                                     <li>
                                         <a href='<%=Page.ResolveUrl("~/Ayuda.aspx") %>'>Ayuda</a>
@@ -157,6 +169,7 @@
                     <!-- /.container-fluid -->
                 </nav>
             </div>
+         
             <div class="contenido">
                 <%--Elementos para cada pagina --%>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
