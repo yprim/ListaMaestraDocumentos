@@ -10,33 +10,42 @@
 namespace LMD.Catalogos {
     
     
-    public partial class AdministrarEstado {
+    public partial class VerEstado {
         
         /// <summary>
-        /// Control lblAdministrarEstados.
+        /// Control lblEliminarEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministrarEstados;
+        protected global::System.Web.UI.WebControls.Label lblEliminarEstado;
         
         /// <summary>
-        /// Control rpEstado.
+        /// Control lblNombreEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpEstado;
+        protected global::System.Web.UI.WebControls.Label lblNombreEstado;
         
         /// <summary>
-        /// Control btnNuevo.
+        /// Control txtNombreEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label txtNombreEstado;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

@@ -33,7 +33,7 @@ namespace AccesoDatos
 
             SqlConnection sqlConnection = conexion.conexionLMD();
 
-            SqlCommand sqlCommand = new SqlCommand("select e.* from  estado e order by descripcion;", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("select e.* from  estado e order by nombre_estado;", sqlConnection);
 
             SqlDataReader reader;
             sqlConnection.Open();
