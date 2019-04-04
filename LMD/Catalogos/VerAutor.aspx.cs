@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace LMD.Catalogos
 {
-    public partial class VerAprobador : System.Web.UI.Page
+    public partial class VerAutor : System.Web.UI.Page
     {
         #region variables globales
-        AprobadorServicios aprobadorServicios = new AprobadorServicios();
+        AutorServicios aprobadorServicios = new AutorServicios();
         #endregion
 
         #region page load
@@ -25,8 +25,8 @@ namespace LMD.Catalogos
 
             if (!IsPostBack)
             {
-                Aprobador aprobador = (Aprobador)Session["AprobadorVer"];
-                txtNombreAprobador.Text = aprobador.nombre;
+                Autor aprobador = (Autor)Session["AutorVer"];
+                txtNombreAutor.Text = aprobador.nombre;
 
             }
 
@@ -34,10 +34,6 @@ namespace LMD.Catalogos
         #endregion
 
         #region eventos
-
-
-
-
 
         /// <summary>
         /// Priscilla Mena Monge
@@ -59,3 +55,4 @@ namespace LMD.Catalogos
         #endregion
     }
 }
+

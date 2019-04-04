@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AprobadorDatos.cs" />
+    <Compile Include="AutorDatos.cs" />
     <Compile Include="ConexionDatos.cs" />
     <Compile Include="EstadoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponsableDatos.cs" />
     <Compile Include="SistemaDatos.cs" />
   </ItemGroup>
   <ItemGroup>

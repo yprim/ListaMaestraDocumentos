@@ -82,12 +82,16 @@
     <Content Include="Catalogos\AdministrarRevision.aspx" />
     <Content Include="Catalogos\AdministrarUbicacion.aspx" />
     <Content Include="Catalogos\EditarAprobador.aspx" />
+    <Content Include="Catalogos\EditarAutor.aspx" />
     <Content Include="Catalogos\EditarEstado.aspx" />
     <Content Include="Catalogos\EliminarAprobador.aspx" />
+    <Content Include="Catalogos\EliminarAutor.aspx" />
     <Content Include="Catalogos\EliminarEstado.aspx" />
     <Content Include="Catalogos\NuevoAprobador.aspx" />
+    <Content Include="Catalogos\NuevoAutor.aspx" />
     <Content Include="Catalogos\NuevoEstado.aspx" />
     <Content Include="Catalogos\VerAprobador.aspx" />
+    <Content Include="Catalogos\VerAutor.aspx" />
     <Content Include="Catalogos\VerEstado.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="Content\DataTables\datatables.min.css" />
@@ -209,6 +213,13 @@
     <Compile Include="Catalogos\EditarAprobador.aspx.designer.cs">
       <DependentUpon>EditarAprobador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\EditarAutor.aspx.cs">
+      <DependentUpon>EditarAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EditarAutor.aspx.designer.cs">
+      <DependentUpon>EditarAutor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\EditarEstado.aspx.cs">
       <DependentUpon>EditarEstado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +233,13 @@
     </Compile>
     <Compile Include="Catalogos\EliminarAprobador.aspx.designer.cs">
       <DependentUpon>EliminarAprobador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\EliminarAutor.aspx.cs">
+      <DependentUpon>EliminarAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EliminarAutor.aspx.designer.cs">
+      <DependentUpon>EliminarAutor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\EliminarEstado.aspx.cs">
       <DependentUpon>EliminarEstado.aspx</DependentUpon>
@@ -237,6 +255,13 @@
     <Compile Include="Catalogos\NuevoAprobador.aspx.designer.cs">
       <DependentUpon>NuevoAprobador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\NuevoAutor.aspx.cs">
+      <DependentUpon>NuevoAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\NuevoAutor.aspx.designer.cs">
+      <DependentUpon>NuevoAutor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\NuevoEstado.aspx.cs">
       <DependentUpon>NuevoEstado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +275,13 @@
     </Compile>
     <Compile Include="Catalogos\VerAprobador.aspx.designer.cs">
       <DependentUpon>VerAprobador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\VerAutor.aspx.cs">
+      <DependentUpon>VerAutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\VerAutor.aspx.designer.cs">
+      <DependentUpon>VerAutor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\VerEstado.aspx.cs">
       <DependentUpon>VerEstado.aspx</DependentUpon>

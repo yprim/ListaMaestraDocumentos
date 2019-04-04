@@ -10,33 +10,42 @@
 namespace LMD.Catalogos {
     
     
-    public partial class AdministrarAutor {
+    public partial class VerAutor {
         
         /// <summary>
-        /// Control lblAdministrarAutores.
+        /// Control lblEliminarAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministrarAutores;
+        protected global::System.Web.UI.WebControls.Label lblEliminarAutor;
         
         /// <summary>
-        /// Control rpAutor.
+        /// Control lblNombreAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpAutor;
+        protected global::System.Web.UI.WebControls.Label lblNombreAutor;
         
         /// <summary>
-        /// Control btnNuevo.
+        /// Control txtNombreAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label txtNombreAutor;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

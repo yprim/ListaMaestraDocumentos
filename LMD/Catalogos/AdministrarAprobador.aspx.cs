@@ -27,7 +27,7 @@ namespace LMD.Catalogos
             Utilidades.escogerMenu(Page, rolesPeromitidos);
             if (!Page.IsPostBack)
             {
-                ///si el rol es de asistente (9) se desabilita el boton de nueva reunion
+                ///si el rol es de asistente (9) se desabilita el boton de nuevo
                 rol = (int)Session["rol"];
 
                 if (rol == 9)
