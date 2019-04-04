@@ -28,7 +28,7 @@ namespace LMD
         }
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         ///25/03/2019
         /// Efecto:Metodo que se activa cuando se le da click al enlace de laboratorio de Ensayos
         /// cambia las variables del sistema a laboratorio de ensayos
@@ -50,7 +50,7 @@ namespace LMD
 
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 25/03/2019
         /// Efecto:Metodo que se activa cuando se le da click al enlace de laboratorio de fuerza
         /// cambia las variables del sistema a laboratorio de fuerza
@@ -72,7 +72,7 @@ namespace LMD
 
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 25/03/2019
         /// Efecto:Metodo que se activa cuando se le da click al enlace de unidad de puentes
         /// cambia las variables del sistema a unidad de puentes

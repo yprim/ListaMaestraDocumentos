@@ -41,7 +41,7 @@ namespace LMD.Catalogos
 
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto:Metodo que se activa cuando se le da click al boton cancelar 
         /// redirecciona a la pantalla de adminstracion de Estados

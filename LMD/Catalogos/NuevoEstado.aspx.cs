@@ -39,7 +39,7 @@ namespace LMD.Catalogos
 
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto:Metodo que valida los campos que debe ingresar el usuario
         /// devuelve true si todos los campos esta con datos correctos
@@ -74,7 +74,7 @@ namespace LMD.Catalogos
 
         #region eventos
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto:Metodo que se activa cuando se cambia el nombre
         /// Requiere: -
@@ -91,7 +91,7 @@ namespace LMD.Catalogos
 
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto:Metodo que se activa cuando se da click al boton de guardar
         /// valida que todos los campos se hayan ingrsado correctamente 
@@ -120,7 +120,7 @@ namespace LMD.Catalogos
 
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto:Metodo que se activa cuando se le da click al boton cancelar 
         /// redirecciona a la pantalla de adminstracion de Estados

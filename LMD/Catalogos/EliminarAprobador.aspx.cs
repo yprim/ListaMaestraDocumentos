@@ -9,11 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace LMD.Catalogos
 {
-    public partial class EliminarEstado : System.Web.UI.Page
+    public partial class EliminarAprobador : System.Web.UI.Page
     {
-
         #region variables globales
-        EstadoServicios estadoServicios = new EstadoServicios();
+        AprobadorServicios aprobadorServicios = new AprobadorServicios();
         #endregion
 
         #region page load
@@ -26,8 +25,8 @@ namespace LMD.Catalogos
 
             if (!IsPostBack)
             {
-                Estado estado = (Estado)Session["EstadoEliminar"];
-                txtNombreEstado.Text = estado.nombre;
+                Aprobador aprobador = (Aprobador)Session["AprobadorEliminar"];
+                txtNombreAprobador.Text = aprobador.nombre;
 
             }
 
@@ -41,9 +40,9 @@ namespace LMD.Catalogos
         /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto: Metodo que se activa cuando se le da click al boton de eliminar
-        /// redirecciona a la pantalla de adminstracion de Estados
-        /// elimina el estado de la base de datos
-        /// redireccion a la pantalla de Administracion de Estados
+        /// redirecciona a la pantalla de adminstracion de Aprobadores
+        /// elimina el aprobador de la base de datos
+        /// redireccion a la pantalla de Administracion de Aprobadores
         /// Requiere: -
         /// Modifica: -
         /// Devuelve: -
@@ -52,18 +51,18 @@ namespace LMD.Catalogos
         /// <returns></returns>
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Estado Estado = (Estado)Session["EstadoEliminar"];
+            Aprobador aprobador = (Aprobador)Session["AprobadorEliminar"];
 
             try
             {
-                estadoServicios.eliminarEstado(Estado);
-                String url = Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx");
+                aprobadorServicios.eliminarAprobador(aprobador);
+                String url = Page.ResolveUrl("~/Catalogos/AdministrarAprobador.aspx");
                 Response.Redirect(url);
             }
             catch (Exception ex)
             {
 
-              //  (this.Master as Site).Mensaje("El estado no puede ser eliminado ya que está siendo utilizado por otra reunión", "¡Alerta!");
+                //  (this.Master as Site).Mensaje("El aprobador no puede ser eliminado ya que está siendo utilizado por otra reunión", "¡Alerta!");
             }
         }
 
@@ -72,7 +71,7 @@ namespace LMD.Catalogos
         /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto:Metodo que se activa cuando se le da click al boton cancelar 
-        /// redirecciona a la pantalla de adminstracion de Estados
+        /// redirecciona a la pantalla de adminstracion de Aprobadores
         /// Requiere: -
         /// Modifica: -
         /// Devuelve: -
@@ -81,7 +80,7 @@ namespace LMD.Catalogos
         /// <returns></returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx");
+            String url = Page.ResolveUrl("~/Catalogos/AdministrarAprobador.aspx");
             Response.Redirect(url);
         }
 

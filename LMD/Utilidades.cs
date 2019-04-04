@@ -171,7 +171,7 @@ internal static class Utilidades
 
        
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 18/03/2019
         /// Efecto: escoge el menu segun el rol del usuario, si el usuario no tiene ningun permiso en esta aplicacion lo redirecciona al login
         /// Requiere: -

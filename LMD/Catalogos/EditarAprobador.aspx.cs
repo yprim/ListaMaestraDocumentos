@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace LMD.Catalogos
 {
-    public partial class EditarEstado : System.Web.UI.Page
+    public partial class EditarAprobador : System.Web.UI.Page
     {
         #region variables globales
-        EstadoServicios estadoServicios = new EstadoServicios();
+        AprobadorServicios aprobadorServicios = new AprobadorServicios();
         #endregion
 
         #region page load
@@ -25,9 +25,9 @@ namespace LMD.Catalogos
 
             if (!IsPostBack)
             {
-                Estado estado = (Estado)Session["EstadoEditar"];
-                txtNombreEstado.Text = estado.nombre;
-                txtNombreEstado.Attributes.Add("oninput", "validarTexto(this)");
+                Aprobador aprobador = (Aprobador)Session["AprobadorEditar"];
+                txtNombreAprobador.Text = aprobador.nombre;
+                txtNombreAprobador.Attributes.Add("oninput", "validarTexto(this)");
             }
         }
 
@@ -38,7 +38,7 @@ namespace LMD.Catalogos
 
         /// <summary>
         /// Priscilla Mena Monge
-        /// 01/04/2019
+        /// 04/04/2019
         /// Efecto:Metodo que valida los campos que debe ingresar el usuario
         /// devuelve true si todos los campos esta con datos correctos
         /// sino devuelve false y marcar lo campos para que el usuario vea cuales son los campos que se encuntran mal
@@ -52,15 +52,15 @@ namespace LMD.Catalogos
         {
             Boolean validados = true;
 
-            #region validacion Nombre Estado
+            #region validacion Nombre Aprobador
 
-            String nombreEstado = txtNombreEstado.Text;
+            String nombreAprobador = txtNombreAprobador.Text;
 
-            if (nombreEstado.Trim() == "")
+            if (nombreAprobador.Trim() == "")
             {
-                txtNombreEstado.CssClass = "form-control alert-danger";
-                divNombreEstadoIncorrecto.Style.Add("display", "block");
-                lblNombreEstadoIncorrecto.Visible = true;
+                txtNombreAprobador.CssClass = "form-control alert-danger";
+                divNombreAprobadorIncorrecto.Style.Add("display", "block");
+                lblNombreAprobadorIncorrecto.Visible = true;
 
                 validados = false;
             }
@@ -74,7 +74,7 @@ namespace LMD.Catalogos
         #region eventos
         /// <summary>
         /// Priscilla Mena Monge
-        /// 01/04/2019
+        /// 04/04/2019
         /// Efecto:Metodo que se activa cuando se cambia el nombre
         /// Requiere: -
         /// Modifica: -
@@ -82,18 +82,18 @@ namespace LMD.Catalogos
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        protected void txtNombreEstado_Changed(object sender, EventArgs e)
+        protected void txtNombreAprobador_Changed(object sender, EventArgs e)
         {
-            txtNombreEstado.CssClass = "form-control";
-            lblNombreEstado.Visible = false;
+            txtNombreAprobador.CssClass = "form-control";
+            lblNombreAprobador.Visible = false;
         }
 
         /// <summary>
         /// Priscilla Mena Monge
-        /// 01/04/2019
+        /// 04/04/2019
         /// Efecto: Metodo que se activa cuando se le da click al boton de actualizar
         ///valida que todos los campos se hayan ingresado correctamente y guarda los datos en la base de datos
-        ///redireccion a la pantalla de Administracion de Estados
+        ///redireccion a la pantalla de Administracion de Aprobadores
         /// Requiere: -
         /// Modifica: -
         /// Devuelve: -
@@ -105,12 +105,12 @@ namespace LMD.Catalogos
             //se validan los campos antes de actualizar los datos en la base de datos
             if (validarCampos())
             {
-                Estado estado = (Estado)Session["EstadoEditar"];
-                estado.nombre = txtNombreEstado.Text;
+                Aprobador aprobador = (Aprobador)Session["AprobadorEditar"];
+                aprobador.nombre = txtNombreAprobador.Text;
 
-                estadoServicios.actualizarEstado(estado);
+                aprobadorServicios.actualizarAprobador(aprobador);
 
-                String url = Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx");
+                String url = Page.ResolveUrl("~/Catalogos/AdministrarAprobador.aspx");
                 Response.Redirect(url);
             }
 
@@ -119,9 +119,9 @@ namespace LMD.Catalogos
 
         /// <summary>
         /// Priscilla Mena Monge
-        /// 01/04/2019
+        /// 04/04/2019
         /// Efecto:Metodo que se activa cuando se le da click al boton cancelar 
-        /// redirecciona a la pantalla de adminstracion de Estados
+        /// redirecciona a la pantalla de adminstracion de Aprobadores
         /// Requiere: -
         /// Modifica: -
         /// Devuelve: -
@@ -130,7 +130,7 @@ namespace LMD.Catalogos
         /// <returns></returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Catalogos/AdministrarEstado.aspx");
+            String url = Page.ResolveUrl("~/Catalogos/AdministrarAprobador.aspx");
             Response.Redirect(url);
         }
 

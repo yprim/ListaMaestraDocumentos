@@ -10,33 +10,51 @@
 namespace LMD.Catalogos {
     
     
-    public partial class AdministrarAprobador {
+    public partial class EliminarAprobador {
         
         /// <summary>
-        /// Control lblAdministrarAprobadores.
+        /// Control lblEliminarAprobador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministrarAprobadores;
+        protected global::System.Web.UI.WebControls.Label lblEliminarAprobador;
         
         /// <summary>
-        /// Control rpAprobador.
+        /// Control lblNombreAprobador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpAprobador;
+        protected global::System.Web.UI.WebControls.Label lblNombreAprobador;
         
         /// <summary>
-        /// Control btnNuevo.
+        /// Control txtNombreAprobador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label txtNombreAprobador;
+        
+        /// <summary>
+        /// Control btnEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

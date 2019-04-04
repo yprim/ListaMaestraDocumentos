@@ -25148,7 +25148,7 @@ var GlyphsUnicode = {
   memdagesh: 0xFB3E,
   memdageshhebrew: 0xFB3E,
   memhebrew: 0x05DE,
-  menarmenian: 0x0574,
+  Mena Mongermenian: 0x0574,
   merkhahebrew: 0x05A5,
   merkhakefulahebrew: 0x05A6,
   merkhakefulalefthebrew: 0x05A6,

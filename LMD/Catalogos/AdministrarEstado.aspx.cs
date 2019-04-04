@@ -44,7 +44,7 @@ namespace LMD.Catalogos
 
         #region logica
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto: Metodo para llenar los datos de la tabla con los Estados que se encuentran en la base de datos
         /// Requiere: -
@@ -63,12 +63,41 @@ namespace LMD.Catalogos
             Session["listaEstados"] = listaEstados;
 
         }
+
+
+        /// <summary>
+        /// Priscilla Mena Monge
+        /// 01/04/2019
+        /// Efecto: oculta los botones de editar y eliminar para los usuarios que son  tipo asistente
+        /// Requiere: -
+        /// Modifica: -
+        /// Devuelve: -
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+
+        protected void rpEstado_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                LinkButton btnEditar = e.Item.FindControl("btnEditar") as LinkButton;
+                LinkButton btnEliminar = e.Item.FindControl("btnEliminar") as LinkButton;
+
+                if (rol == 9)
+                {
+                    btnEditar.Visible = false;
+                    btnEliminar.Visible = false;
+                }
+
+            }
+
+        }
         #endregion
 
         #region eventos
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto: Metodo que redirecciona a la pagina donde se ingresa un nuevo Estado,
         /// se activa cuando se presiona el boton de nuevo
@@ -85,7 +114,7 @@ namespace LMD.Catalogos
         }
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto: Metodo que redirecciona a la pagina donde se edita un Estado,
         /// se activa cuando se presiona el boton de editar
@@ -119,7 +148,7 @@ namespace LMD.Catalogos
         }
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto: Metodo que redirecciona a la pagina donde se elimina un Estado,
         /// se activa cuando se presiona el boton de eliminar
@@ -154,7 +183,7 @@ namespace LMD.Catalogos
         }
 
         /// <summary>
-        /// Priscilla Mena
+        /// Priscilla Mena Monge
         /// 01/04/2019
         /// Efecto: Metodo que redirecciona a la pagina donde se ve un Estado,
         /// se activa cuando se presiona el boton de ver
@@ -185,35 +214,6 @@ namespace LMD.Catalogos
 
             String url = Page.ResolveUrl("~/Catalogos/VerEstado.aspx");
             Response.Redirect(url);
-
-        }
-
-
-        /// <summary>
-        /// Priscilla Mena
-        /// 01/04/2019
-        /// Efecto: oculta los botones de editar y eliminar para los usuarios que son  tipo asistente
-        /// Requiere: -
-        /// Modifica: -
-        /// Devuelve: -
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-
-        protected void rpEstado_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                LinkButton btnEditar = e.Item.FindControl("btnEditar") as LinkButton;
-                LinkButton btnEliminar = e.Item.FindControl("btnEliminar") as LinkButton;
-
-                if (rol == 9)
-                {
-                    btnEditar.Visible = false;
-                    btnEliminar.Visible = false;
-                }
-
-            }
 
         }
 

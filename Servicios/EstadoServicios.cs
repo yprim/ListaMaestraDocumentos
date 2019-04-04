@@ -15,8 +15,11 @@ namespace Servicios
     /// </summary>
     public class EstadoServicios
     {
+        #region variables
         EstadoDatos estadoDatos = new EstadoDatos();
+        #endregion
 
+        #region servicios
         /// <summary>
         /// Priscilla Mena
         /// 01/04/2019
@@ -74,5 +77,7 @@ namespace Servicios
         {
             estadoDatos.eliminarEstado(estado);
         }
+
+        #endregion
     }
 }

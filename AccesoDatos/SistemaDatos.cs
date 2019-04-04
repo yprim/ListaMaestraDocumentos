@@ -15,8 +15,11 @@ namespace AccesoDatos
     /// </summary>
     public class SistemaDatos
     {
+        #region variables
         private ConexionDatos conexion = new ConexionDatos();
+        #endregion
 
+        #region consultas
 
         /// <summary>
         /// Priscilla Mena
@@ -54,5 +57,6 @@ namespace AccesoDatos
 
             return sistemaSalida;
         }
+        #endregion
     }
 }

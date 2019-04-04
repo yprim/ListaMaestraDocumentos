@@ -10,8 +10,10 @@ namespace AccesoDatos
 {
     public class ConexionDatos
     {
+        #region variables
         BaseDatos baseDatos = new BaseDatos();
         Archivo archivo = new Archivo();
+        #endregion
 
         public SqlConnection conexionLogin()
         {
