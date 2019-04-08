@@ -19,7 +19,7 @@ namespace LMD.Catalogos
         #region page load
         protected void Page_Load(object sender, EventArgs e)
         {
-            //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene el ElementoRevisar
+            //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene 
             //si no tiene permiso de ver la pagina se redirecciona a login
             int[] rolesPermitidos = { 2, 9 };
             Utilidades.escogerMenu(Page, rolesPermitidos);

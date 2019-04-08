@@ -7,36 +7,54 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace LMD {
+namespace LMD.Catalogos {
     
     
-    public partial class Menu {
+    public partial class EliminarResponsable {
         
         /// <summary>
-        /// Control le.
+        /// Control lblEliminarResponsable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor le;
+        protected global::System.Web.UI.WebControls.Label lblEliminarResponsable;
         
         /// <summary>
-        /// Control up.
+        /// Control lblNombreResponsable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor up;
+        protected global::System.Web.UI.WebControls.Label lblNombreResponsable;
         
         /// <summary>
-        /// Control lf.
+        /// Control txtNombreResponsable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lf;
+        protected global::System.Web.UI.WebControls.Label txtNombreResponsable;
+        
+        /// <summary>
+        /// Control btnEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

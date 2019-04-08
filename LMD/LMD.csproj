@@ -84,15 +84,19 @@
     <Content Include="Catalogos\EditarAprobador.aspx" />
     <Content Include="Catalogos\EditarAutor.aspx" />
     <Content Include="Catalogos\EditarEstado.aspx" />
+    <Content Include="Catalogos\EditarResponsable.aspx" />
     <Content Include="Catalogos\EliminarAprobador.aspx" />
     <Content Include="Catalogos\EliminarAutor.aspx" />
     <Content Include="Catalogos\EliminarEstado.aspx" />
+    <Content Include="Catalogos\EliminarResponsable.aspx" />
     <Content Include="Catalogos\NuevoAprobador.aspx" />
     <Content Include="Catalogos\NuevoAutor.aspx" />
     <Content Include="Catalogos\NuevoEstado.aspx" />
+    <Content Include="Catalogos\NuevoResponsable.aspx" />
     <Content Include="Catalogos\VerAprobador.aspx" />
     <Content Include="Catalogos\VerAutor.aspx" />
     <Content Include="Catalogos\VerEstado.aspx" />
+    <Content Include="Catalogos\VerResponsable.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="Content\DataTables\datatables.min.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
@@ -111,7 +115,7 @@
     <Content Include="DocumentosExternos\AdministrarDocumentoExterno.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="LaboratorioEnsayos.aspx" />
-    <Content Include="Menu.aspx" />
+    <Content Include="cambio.aspx" />
     <Content Include="Error\Error.aspx" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
@@ -130,6 +134,7 @@
     <Content Include="Imagenes\logo_LANAMME-140x140.png" />
     <Content Include="Imagenes\UCR informe.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Menu.aspx" />
     <Content Include="Procedimientos\AdministrarProcedimiento.aspx" />
     <Content Include="Registros\AdministrarRegistro.aspx" />
     <Content Include="Scripts\abrirfile.js" />
@@ -227,6 +232,13 @@
     <Compile Include="Catalogos\EditarEstado.aspx.designer.cs">
       <DependentUpon>EditarEstado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\EditarResponsable.aspx.cs">
+      <DependentUpon>EditarResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EditarResponsable.aspx.designer.cs">
+      <DependentUpon>EditarResponsable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\EliminarAprobador.aspx.cs">
       <DependentUpon>EliminarAprobador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,6 +259,13 @@
     </Compile>
     <Compile Include="Catalogos\EliminarEstado.aspx.designer.cs">
       <DependentUpon>EliminarEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\EliminarResponsable.aspx.cs">
+      <DependentUpon>EliminarResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EliminarResponsable.aspx.designer.cs">
+      <DependentUpon>EliminarResponsable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\NuevoAprobador.aspx.cs">
       <DependentUpon>NuevoAprobador.aspx</DependentUpon>
@@ -269,6 +288,13 @@
     <Compile Include="Catalogos\NuevoEstado.aspx.designer.cs">
       <DependentUpon>NuevoEstado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\NuevoResponsable.aspx.cs">
+      <DependentUpon>NuevoResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\NuevoResponsable.aspx.designer.cs">
+      <DependentUpon>NuevoResponsable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\VerAprobador.aspx.cs">
       <DependentUpon>VerAprobador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,6 +315,13 @@
     </Compile>
     <Compile Include="Catalogos\VerEstado.aspx.designer.cs">
       <DependentUpon>VerEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\VerResponsable.aspx.cs">
+      <DependentUpon>VerResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\VerResponsable.aspx.designer.cs">
+      <DependentUpon>VerResponsable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Configuracion\Configuracion.aspx.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
@@ -318,12 +351,12 @@
     <Compile Include="LaboratorioEnsayos.aspx.designer.cs">
       <DependentUpon>LaboratorioEnsayos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Menu.aspx.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
+    <Compile Include="cambio.aspx.cs">
+      <DependentUpon>cambio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Menu.aspx.designer.cs">
-      <DependentUpon>Menu.aspx</DependentUpon>
+    <Compile Include="cambio.aspx.designer.cs">
+      <DependentUpon>cambio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error\Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -341,6 +374,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Procedimientos\AdministrarProcedimiento.aspx.cs">
       <DependentUpon>AdministrarProcedimiento.aspx</DependentUpon>
@@ -377,7 +417,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap.css.map" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
@@ -409,6 +448,7 @@
     <Content Include="font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
+    <Content Include="css\bootstrap.css.map" />
     <Content Include="Scripts\bootstrap3-dialog-master.zip" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

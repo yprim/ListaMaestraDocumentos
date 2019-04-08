@@ -15,7 +15,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <%-- Estilos con formato UCR  --%>
     <link href="css/Lanamme.css" rel="stylesheet" />  
-    <link href="css/inicio.css" rel="stylesheet" />
+    
     <!-- Font Awesome -->
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <!--Dialogos de Mensaje ref:https://nakupanda.github.io/bootstrap3-dialog/#available-options -->
@@ -29,7 +29,7 @@
 
     <script src='<%=Page.ResolveUrl("~/Scripts/bootstrap-dialog.js") %>'></script>
     <script src='<%=Page.ResolveUrl("~/Scripts/Dialogo.js") %>'></script>
-    
+    <link href="css/inicio.css" rel="stylesheet" />
 
     <title>Lista Maestra de Documentos</title>
     <link rel="icon" href='<%=Page.ResolveUrl("~/Imagenes/favicon.ico") %>' />

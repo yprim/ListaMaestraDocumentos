@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace LMD
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Menu : System.Web.UI.Page
     {
         #region variables globales
         SistemaServicios sistemaServicios = new SistemaServicios();
@@ -18,7 +18,7 @@ namespace LMD
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene el ElementoRevisar
+            //controla los menus q se muestran y las pantallas que se muestras segun el rol que tiene 
             //si no tiene permiso de ver la pagina se redirecciona a login
             int[] rolesPermitidos = { 2, 9 };
             Utilidades.escogerMenu(Page, rolesPermitidos);
@@ -91,6 +91,5 @@ namespace LMD
             Session["nombreSistema"] = sistema.nombre;
             Response.Redirect(url);
         }
-
     }
 }

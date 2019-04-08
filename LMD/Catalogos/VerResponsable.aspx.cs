@@ -9,10 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace LMD.Catalogos
 {
-    public partial class VerAutor : System.Web.UI.Page
+    public partial class VerResponsable : System.Web.UI.Page
     {
         #region variables globales
-        AutorServicios autorServicios = new AutorServicios();
+        ResponsableServicios responsableServicios = new ResponsableServicios();
         #endregion
 
         #region page load
@@ -25,8 +25,8 @@ namespace LMD.Catalogos
 
             if (!IsPostBack)
             {
-                Autor autor = (Autor)Session["AutorVer"];
-                txtNombreAutor.Text = autor.nombre;
+                Responsable responsable = (Responsable)Session["ResponsableVer"];
+                txtNombreResponsable.Text = responsable.nombre;
 
             }
 
@@ -37,9 +37,9 @@ namespace LMD.Catalogos
 
         /// <summary>
         /// Priscilla Mena Monge
-        /// 01/04/2019
+        /// 08/04/2019
         /// Efecto:Metodo que se activa cuando se le da click al boton cancelar 
-        /// redirecciona a la pantalla de adminstracion de Autores
+        /// redirecciona a la pantalla de adminstracion de Responsables
         /// Requiere: -
         /// Modifica: -
         /// Devuelve: -
@@ -48,7 +48,7 @@ namespace LMD.Catalogos
         /// <returns></returns>
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Catalogos/AdministrarAutor.aspx");
+            String url = Page.ResolveUrl("~/Catalogos/AdministrarResponsable.aspx");
             Response.Redirect(url);
         }
 

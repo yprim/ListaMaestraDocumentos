@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsableDatos.cs" />
     <Compile Include="SistemaDatos.cs" />
+    <Compile Include="UbicacionDatos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
