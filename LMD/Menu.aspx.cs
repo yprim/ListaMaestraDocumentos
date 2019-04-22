@@ -25,6 +25,7 @@ namespace LMD
 
             Page.Master.FindControl("menu").Visible = false;
             Session["tituloSistema"] = "";
+       
         }
 
         /// <summary>
@@ -43,8 +44,7 @@ namespace LMD
             Session["tituloSistema"] = " para laboratorio de ensayos";
             String url = Page.ResolveUrl("~/Inicio.aspx");
             Sistema sistema = sistemaServicios.getSistema("laboratorio de ensayos");
-            Session["idSistema"] = sistema.idSistema;
-            Session["nombreSistema"] = sistema.nombre;
+            Session["sistema"] = sistema;
             Response.Redirect(url);
         }
 
@@ -65,8 +65,7 @@ namespace LMD
             Session["tituloSistema"] = " para laboratorio de fuerza";
             String url = Page.ResolveUrl("~/Inicio.aspx");
             Sistema sistema = sistemaServicios.getSistema("laboratorio de fuerza");
-            Session["idSistema"] = sistema.idSistema;
-            Session["nombreSistema"] = sistema.nombre;
+            Session["sistema"] = sistema;
             Response.Redirect(url);
         }
 
@@ -87,8 +86,7 @@ namespace LMD
             Session["tituloSistema"] = " para unidad de puentes";
             String url = Page.ResolveUrl("~/Inicio.aspx");
             Sistema sistema = sistemaServicios.getSistema("unidad de puentes");
-            Session["idSistema"] = sistema.idSistema;
-            Session["nombreSistema"] = sistema.nombre;
+            Session["sistema"] = sistema;
             Response.Redirect(url);
         }
     }

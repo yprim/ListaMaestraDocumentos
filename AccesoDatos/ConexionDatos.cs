@@ -15,6 +15,7 @@ namespace AccesoDatos
         Archivo archivo = new Archivo();
         #endregion
 
+        #region consultas
         public SqlConnection conexionLogin()
         {
             baseDatos = archivo.leerArchivo();
@@ -85,5 +86,7 @@ namespace AccesoDatos
 
             return rolNombreCompleto;
         }
+        #endregion
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,9 +20,9 @@ namespace LMD
                 //username.InnerText = "Bienvenid@ " + Session["nombreCompleto"].ToString();
                 username.Text = "Bienvenid@ " + Session["nombreCompleto"].ToString();
 
-            
-                    Label1.Text = "Lista Maestra de Documentos " + Session["tituloSistema"].ToString();
-               
+
+                titulo.Text = "Lista Maestra de Documentos " + Session["tituloSistema"].ToString();
+              
             }
         }
 

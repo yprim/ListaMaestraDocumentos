@@ -16,6 +16,7 @@ namespace LMD
             // 9 significa asistente y 2 significa administrador
             int[] rolesPeromitidos = { 2, 9 };
             Utilidades.escogerMenu(Page, rolesPeromitidos);
+
         }
     }
 }

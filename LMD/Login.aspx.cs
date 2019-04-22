@@ -1,4 +1,5 @@
-﻿using Servicios;
+﻿using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
@@ -24,8 +25,7 @@ namespace LMD
             Session["rol"] = null;
             Session["nombreCompleto"] = null;
             Session["tituloSistema"] =
-            Session["idSistema"] = 0;
-            Session["nombreSistema"] = "";
+            Session["sistema"] = new Sistema();
 
         }
         #endregion

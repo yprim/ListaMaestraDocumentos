@@ -58,7 +58,7 @@
                                     <div class="bottom-content">
                                
                                           <h4 style="font-family: 'Arial Rounded MT Bold'; color: #FFFFFF;">
-                                 <asp:Label ID="Label1" Font-Bold="true" text="Lista Maestra de Documentos" runat="server"></asp:Label>
+                                 <asp:Label ID="titulo" Font-Bold="true" text="Lista Maestra de Documentos" runat="server"></asp:Label>
                                               </h4>
                                     </div>
                                 </div>
