@@ -10,33 +10,42 @@
 namespace LMD.Catalogos {
     
     
-    public partial class AdministrarUbicacion {
+    public partial class VerUbicacion {
         
         /// <summary>
-        /// Control lblAdministrarUbicaciones.
+        /// Control lblEliminarUbicacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministrarUbicaciones;
+        protected global::System.Web.UI.WebControls.Label lblEliminarUbicacion;
         
         /// <summary>
-        /// Control rpUbicacion.
+        /// Control lblNombreUbicacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpUbicacion;
+        protected global::System.Web.UI.WebControls.Label lblNombreUbicacion;
         
         /// <summary>
-        /// Control btnNuevo.
+        /// Control txtNombreUbicacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label txtNombreUbicacion;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

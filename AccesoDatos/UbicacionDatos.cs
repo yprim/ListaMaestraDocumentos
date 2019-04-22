@@ -88,7 +88,7 @@ namespace AccesoDatos
         /// <summary>
         /// Priscilla Mena Monge
         ///08/04/2019
-        /// Efecto: actualiza un ubicacion
+        /// Efecto: actualiza una ubicacion
         /// Requiere: ubicacion a modificar
         /// Modifica: ubicacion
         /// Devuelve: -
@@ -116,7 +116,7 @@ namespace AccesoDatos
         /// <summary>
         /// Priscilla Mena
         ///08/04/2019
-        /// Efecto: Elimina un ubicacion 
+        /// Efecto: Elimina una ubicacion 
         /// Requiere: ubicacion
         /// Modifica: -
         /// Devuelve: -

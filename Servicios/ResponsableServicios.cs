@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace Servicios
 {
+    /// <summary>
+    /// Priscilla Mena Monge
+    ///22/04/2019
+    ///Clase para administrar los servicios para la entidad Responsable
+    /// </summary>
     public class ResponsableServicios
     {
         #region variables

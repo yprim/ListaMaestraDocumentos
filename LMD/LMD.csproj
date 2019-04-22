@@ -79,16 +79,18 @@
     <Content Include="Catalogos\AdministrarAutor.aspx" />
     <Content Include="Catalogos\AdministrarEstado.aspx" />
     <Content Include="Catalogos\AdministrarResponsable.aspx" />
-    <Content Include="Catalogos\AdministrarRevision.aspx" />
     <Content Include="Catalogos\AdministrarUbicacion.aspx" />
     <Content Include="Catalogos\EditarAprobador.aspx" />
     <Content Include="Catalogos\EditarAutor.aspx" />
     <Content Include="Catalogos\EditarEstado.aspx" />
     <Content Include="Catalogos\EditarResponsable.aspx" />
+    <Content Include="Catalogos\EditarUbicacion.aspx" />
     <Content Include="Catalogos\EliminarAprobador.aspx" />
     <Content Include="Catalogos\EliminarAutor.aspx" />
     <Content Include="Catalogos\EliminarEstado.aspx" />
     <Content Include="Catalogos\EliminarResponsable.aspx" />
+    <Content Include="Catalogos\EliminarUbicacion.aspx" />
+    <Content Include="Catalogos\NuevaUbicacion.aspx" />
     <Content Include="Catalogos\NuevoAprobador.aspx" />
     <Content Include="Catalogos\NuevoAutor.aspx" />
     <Content Include="Catalogos\NuevoEstado.aspx" />
@@ -97,6 +99,7 @@
     <Content Include="Catalogos\VerAutor.aspx" />
     <Content Include="Catalogos\VerEstado.aspx" />
     <Content Include="Catalogos\VerResponsable.aspx" />
+    <Content Include="Catalogos\VerUbicacion.aspx" />
     <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="Content\DataTables\datatables.min.css" />
     <Content Include="Content\DataTables\images\details_close.png" />
@@ -115,7 +118,6 @@
     <Content Include="DocumentosExternos\AdministrarDocumentoExterno.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="LaboratorioEnsayos.aspx" />
-    <Content Include="cambio.aspx" />
     <Content Include="Error\Error.aspx" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
@@ -197,13 +199,6 @@
     <Compile Include="Catalogos\AdministrarResponsable.aspx.designer.cs">
       <DependentUpon>AdministrarResponsable.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Catalogos\AdministrarRevision.aspx.cs">
-      <DependentUpon>AdministrarRevision.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Catalogos\AdministrarRevision.aspx.designer.cs">
-      <DependentUpon>AdministrarRevision.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Catalogos\AdministrarUbicacion.aspx.cs">
       <DependentUpon>AdministrarUbicacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,6 +234,13 @@
     <Compile Include="Catalogos\EditarResponsable.aspx.designer.cs">
       <DependentUpon>EditarResponsable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\EditarUbicacion.aspx.cs">
+      <DependentUpon>EditarUbicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EditarUbicacion.aspx.designer.cs">
+      <DependentUpon>EditarUbicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\EliminarAprobador.aspx.cs">
       <DependentUpon>EliminarAprobador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -266,6 +268,20 @@
     </Compile>
     <Compile Include="Catalogos\EliminarResponsable.aspx.designer.cs">
       <DependentUpon>EliminarResponsable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\EliminarUbicacion.aspx.cs">
+      <DependentUpon>EliminarUbicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EliminarUbicacion.aspx.designer.cs">
+      <DependentUpon>EliminarUbicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\NuevaUbicacion.aspx.cs">
+      <DependentUpon>NuevaUbicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\NuevaUbicacion.aspx.designer.cs">
+      <DependentUpon>NuevaUbicacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogos\NuevoAprobador.aspx.cs">
       <DependentUpon>NuevoAprobador.aspx</DependentUpon>
@@ -323,6 +339,13 @@
     <Compile Include="Catalogos\VerResponsable.aspx.designer.cs">
       <DependentUpon>VerResponsable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\VerUbicacion.aspx.cs">
+      <DependentUpon>VerUbicacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\VerUbicacion.aspx.designer.cs">
+      <DependentUpon>VerUbicacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Configuracion\Configuracion.aspx.cs">
       <DependentUpon>Configuracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -350,13 +373,6 @@
     </Compile>
     <Compile Include="LaboratorioEnsayos.aspx.designer.cs">
       <DependentUpon>LaboratorioEnsayos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="cambio.aspx.cs">
-      <DependentUpon>cambio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="cambio.aspx.designer.cs">
-      <DependentUpon>cambio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error\Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -455,6 +471,7 @@
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup />
