@@ -45,6 +45,7 @@
     <Compile Include="AutorServicios.cs" />
     <Compile Include="ConexionServicios.cs" />
     <Compile Include="EstadoServicios.cs" />
+    <Compile Include="ProcedimientoServicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsableServicios.cs" />
     <Compile Include="SistemaServicios.cs" />
