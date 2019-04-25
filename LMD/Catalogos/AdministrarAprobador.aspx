@@ -18,7 +18,7 @@
                 <hr />
             </div>
 
-            <%-- tabla--%>
+                 <%-- tabla--%>
             <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center; overflow-y: auto;">
 
                 <asp:Repeater ID="rpAprobador" runat="server" OnItemDataBound="rpAprobador_ItemDataBound">
@@ -42,6 +42,8 @@
                             <td>
                                 <%# Eval("nombre") %>
                             </td>
+                            
+
                         </tr>
 
                     </ItemTemplate>
@@ -58,6 +60,7 @@
                 </asp:Repeater>
             </div>
             <%-- fin tabla--%>
+
 
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                 <hr />

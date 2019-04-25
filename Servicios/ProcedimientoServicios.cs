@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Servicios
 {
     /// Priscilla Mena
-    /// 01/04/2019
+    /// 25/04/2019
     /// Clase para administrar los servicios de Procedimiento
     /// </summary>
     public class ProcedimientoServicios
@@ -35,6 +35,6 @@ namespace Servicios
         }
 
         #endregion
-
+    
     }
 }
