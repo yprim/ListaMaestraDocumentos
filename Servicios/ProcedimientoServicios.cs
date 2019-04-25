@@ -34,7 +34,22 @@ namespace Servicios
             return procedimientoDatos.getProcedimientos(idSistema);
         }
 
-        #endregion
-    
-    }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 25/04/2019
+        /// Efecto: Inserta un procedimiento en la base de datos
+        /// Requiere: Procedimiento 
+        /// Modifica: Procedimientos
+        /// Devuelve: idProcedimiento insertado
+        /// </summary>
+        /// <param name="procedimiento"></param>
+        /// <returns>idProcedimiento</returns>
+        public int insertarProcedimiento(Procedimiento procedimiento)
+        {
+            return procedimientoDatos.insertarProcedimiento(procedimiento);
+        }
+            #endregion
+
+        }
 }

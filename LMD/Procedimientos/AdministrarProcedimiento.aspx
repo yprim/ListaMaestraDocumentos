@@ -38,7 +38,6 @@
                                      <th>Referencia adicional</th>
                                     <th>Responsable</th>
                                     <th>Estado</th>
-                                     <th>Activo</th>
                                 </tr>
                             </thead>
                     </HeaderTemplate>
@@ -54,7 +53,7 @@
                                 <%# Eval("nombreDocumento") %>
                             </td>
                              <td>
-                                <%# Eval("codigo") %>
+                                <%# Eval("codigo") %>k
                             </td>
                              <td>
                                 <%# Eval("acreditado") %>
@@ -83,9 +82,7 @@
                              <td>
                                 <%# Eval("estado.nombre") %>
                             </td>
-                             <td>
-                                <%# Eval("activo") %>
-                            </td>
+                             
 
                         </tr>
 

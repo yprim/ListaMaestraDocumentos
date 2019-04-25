@@ -112,7 +112,7 @@ namespace LMD.Procedimientos
         /// <returns></returns>
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            String url = Page.ResolveUrl("~/Catalogos/NuevoProcedimiento.aspx");
+            String url = Page.ResolveUrl("~/Procedimientos/NuevoProcedimiento.aspx");
             Response.Redirect(url);
         }
 
@@ -146,7 +146,7 @@ namespace LMD.Procedimientos
 
             Session["procedimientoEditar"] = procedimientoEditar;
 
-            String url = Page.ResolveUrl("~/Catalogos/EditarProcedimiento.aspx");
+            String url = Page.ResolveUrl("~/Procedimientos/EditarProcedimiento.aspx");
             Response.Redirect(url);
         }
 
@@ -180,7 +180,7 @@ namespace LMD.Procedimientos
 
             Session["procedimientoEliminar"] = procedimientoEliminar;
 
-            String url = Page.ResolveUrl("~/Catalogos/EliminarProcedimiento.aspx");
+            String url = Page.ResolveUrl("~/Procedimientos/EliminarProcedimiento.aspx");
             Response.Redirect(url);
 
         }
@@ -215,7 +215,7 @@ namespace LMD.Procedimientos
 
             Session["procedimientoVer"] = procedimientoVer;
 
-            String url = Page.ResolveUrl("~/Catalogos/VerProcedimiento.aspx");
+            String url = Page.ResolveUrl("~/Procedimientos/VerProcedimiento.aspx");
             Response.Redirect(url);
 
         }

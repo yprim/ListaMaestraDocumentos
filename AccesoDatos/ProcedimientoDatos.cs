@@ -102,6 +102,67 @@ namespace AccesoDatos
             return listaProcedimientos;
         }
 
+        /// <summary>
+        /// Priscilla Mena
+        /// 25/04/2019
+        /// Efecto: Inserta un procedimiento en la base de datos
+        /// Requiere: Procedimiento 
+        /// Modifica: Procedimientos
+        /// Devuelve: idProcedimiento insertado
+        /// </summary>
+        /// <param name="procedimiento"></param>
+        /// <returns>idProcedimiento</returns>
+        public int insertarProcedimiento(Procedimiento procedimiento)
+        {
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            string consulta = @"INSERT INTO Procedimiento
+           (nombre_documento_procedimiento ,codigo ,acreditado,version ,rige_desde,id_aprobador ,sustituye_a,distribuido_a,referencia_adicional
+           ,id_responsable,id_estado,id_sistema,activo)
+            VALUES
+           (@nombre_documento_procedimiento,
+           @codigo, 
+           @acreditado, 
+           @version, 
+           @rige_desde,
+           @id_aprobador,
+           @sustituye_a, 
+           @distribuido_a, 
+           @referencia_adicional, 
+           @id_responsable,
+           @id_estado,
+           @id_sistema,
+           @activo);
+            SELECT SCOPE_IDENTITY();";
+
+
+            SqlCommand sqlCommand = new SqlCommand(consulta, sqlConnection);
+       
+            sqlCommand.Parameters.AddWithValue("@nombre_documento_procedimiento", procedimiento.nombreDocumento);
+            sqlCommand.Parameters.AddWithValue("@codigo", procedimiento.codigo);
+            sqlCommand.Parameters.AddWithValue("@acreditado", procedimiento.acreditado);
+            sqlCommand.Parameters.AddWithValue("@version", procedimiento.version);
+            sqlCommand.Parameters.AddWithValue("@rige_desde", procedimiento.rigeDesde);
+            sqlCommand.Parameters.AddWithValue("@distribuido_a", procedimiento.distribuidoA);
+            sqlCommand.Parameters.AddWithValue("@sustituye_a", procedimiento.sustituyeA);
+            sqlCommand.Parameters.AddWithValue("@referencia_adicional", procedimiento.referenciaAdicional);
+            sqlCommand.Parameters.AddWithValue("@id_responsable", procedimiento.responsable.idResponsable);
+            sqlCommand.Parameters.AddWithValue("@id_estado", procedimiento.estado.idEstado);
+            sqlCommand.Parameters.AddWithValue("@id_aprobador", procedimiento.aprobador.idAprobador);
+            sqlCommand.Parameters.AddWithValue("@id_sistema", procedimiento.sistema.idSistema);
+            sqlCommand.Parameters.AddWithValue("@activo", procedimiento.activo);
+
+            sqlConnection.Open();
+
+
+            int idProcedimiento = Convert.ToInt32(sqlCommand.ExecuteScalar());
+            sqlConnection.Close();
+
+            return idProcedimiento;
+        }
+
+
+
         #endregion
     }
 }

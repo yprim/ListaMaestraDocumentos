@@ -138,6 +138,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="Procedimientos\AdministrarProcedimiento.aspx" />
+    <Content Include="Procedimientos\NuevoProcedimiento.aspx" />
     <Content Include="Registros\AdministrarRegistro.aspx" />
     <Content Include="Scripts\abrirfile.js" />
     <Content Include="Scripts\bootbox.min.js" />
@@ -404,6 +405,13 @@
     </Compile>
     <Compile Include="Procedimientos\AdministrarProcedimiento.aspx.designer.cs">
       <DependentUpon>AdministrarProcedimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procedimientos\NuevoProcedimiento.aspx.cs">
+      <DependentUpon>NuevoProcedimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procedimientos\NuevoProcedimiento.aspx.designer.cs">
+      <DependentUpon>NuevoProcedimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registros\AdministrarRegistro.aspx.cs">
