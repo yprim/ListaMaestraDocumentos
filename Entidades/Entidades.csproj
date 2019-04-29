@@ -45,6 +45,7 @@
     <Compile Include="Archivo.cs" />
     <Compile Include="Autor.cs" />
     <Compile Include="BaseDatos.cs" />
+    <Compile Include="DocumentoExterno.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="Procedimiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
