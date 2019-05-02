@@ -39,7 +39,10 @@ namespace AccesoDatos
                                   ,d.version
                                   ,d.presentacion
                                   ,d.activo
-                              FROM Documento_Externo d";
+                                  ,s.id_sistema
+                                  ,s.nombre_sistema
+                              FROM Documento_Externo d, Sistema s
+                              WHERE d.id_sistema=s.id_sistema and s.id_sistema=@id_sistema";
 
             SqlCommand sqlCommand = new SqlCommand(consulta, sqlConnexion);
             sqlCommand.Parameters.AddWithValue("@id_sistema", idSistema);

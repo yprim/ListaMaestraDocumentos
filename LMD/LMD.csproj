@@ -116,6 +116,7 @@
     <Content Include="css\inicio.css" />
     <Content Include="css\Lanamme.css" />
     <Content Include="DocumentosExternos\AdministrarDocumentoExterno.aspx" />
+    <Content Include="DocumentosExternos\NuevoDocumentoExterno.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="LaboratorioEnsayos.aspx" />
     <Content Include="Error\Error.aspx" />
@@ -360,6 +361,13 @@
     </Compile>
     <Compile Include="DocumentosExternos\AdministrarDocumentoExterno.aspx.designer.cs">
       <DependentUpon>AdministrarDocumentoExterno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentosExternos\NuevoDocumentoExterno.aspx.cs">
+      <DependentUpon>NuevoDocumentoExterno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentosExternos\NuevoDocumentoExterno.aspx.designer.cs">
+      <DependentUpon>NuevoDocumentoExterno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>

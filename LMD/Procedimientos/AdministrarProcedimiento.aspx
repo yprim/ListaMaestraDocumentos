@@ -92,7 +92,18 @@
                         <thead>
                             <tr id="filterrow">
                                 <td></td>
-                                <th>Nombre</th>
+                                <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                            
                             </tr>
                         </thead>
                         </table>
