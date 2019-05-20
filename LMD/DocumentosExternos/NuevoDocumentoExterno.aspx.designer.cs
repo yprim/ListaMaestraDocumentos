@@ -22,15 +22,6 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liDocumentoExterno;
         
         /// <summary>
-        /// Control liAutor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAutor;
-        
-        /// <summary>
         /// Control liProcedimiento.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liProcedimiento;
         
         /// <summary>
-        /// Control liUbicacion.
+        /// Control liAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liUbicacion;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAutor;
         
         /// <summary>
         /// Control ViewDocumentoExterno.
@@ -67,22 +58,40 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.WebControls.Label lblNuevaDocumentoExterno;
         
         /// <summary>
-        /// Control lblTipo.
+        /// Control lblNombreProcedimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipo;
+        protected global::System.Web.UI.WebControls.Label lblNombreProcedimiento;
         
         /// <summary>
-        /// Control ddlTipos.
+        /// Control txtNombreProcedimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipos;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreProcedimiento;
+        
+        /// <summary>
+        /// Control divNombreProcedimientoIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNombreProcedimientoIncorrecto;
+        
+        /// <summary>
+        /// Control lblNombreProcedimientoIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreProcedimientoIncorrecto;
         
         /// <summary>
         /// Control lblAnno.
@@ -103,6 +112,60 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.WebControls.TextBox txtAnno;
         
         /// <summary>
+        /// Control lblVersion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVersion;
+        
+        /// <summary>
+        /// Control txtVersion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVersion;
+        
+        /// <summary>
+        /// Control divVersionIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divVersionIncorrecto;
+        
+        /// <summary>
+        /// Control lblVersionIncorrecto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVersionIncorrecto;
+        
+        /// <summary>
+        /// Control lblPresentacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPresentacion;
+        
+        /// <summary>
+        /// Control ddlPresentacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPresentacion;
+        
+        /// <summary>
         /// Control btnGuardar.
         /// </summary>
         /// <remarks>
@@ -119,78 +182,6 @@ namespace LMD.DocumentosExternos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
-        
-        /// <summary>
-        /// Control ViewAutor.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewAutor;
-        
-        /// <summary>
-        /// Control rpElementoSinAsociar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpElementoSinAsociar;
-        
-        /// <summary>
-        /// Control lblAutoresAsociados.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAutoresAsociados;
-        
-        /// <summary>
-        /// Control rpElemento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpElemento;
-        
-        /// <summary>
-        /// Control btnActualizar2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar2;
-        
-        /// <summary>
-        /// Control btnRegresar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegresar;
-        
-        /// <summary>
-        /// Control lblDesasocaiarElemento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDesasocaiarElemento;
-        
-        /// <summary>
-        /// Control btnDesasociarElemento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDesasociarElemento;
         
         /// <summary>
         /// Control ViewProcedimiento.
@@ -229,6 +220,78 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.WebControls.Repeater rpProcedimiento;
         
         /// <summary>
+        /// Control btnActualizar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizar2;
+        
+        /// <summary>
+        /// Control btnRegresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegresar;
+        
+        /// <summary>
+        /// Control lblDesasocaiarProcedimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDesasocaiarProcedimiento;
+        
+        /// <summary>
+        /// Control btnDesasociarProcedimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDesasociarProcedimiento;
+        
+        /// <summary>
+        /// Control ViewAutor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewAutor;
+        
+        /// <summary>
+        /// Control rpAutorSinAsociar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpAutorSinAsociar;
+        
+        /// <summary>
+        /// Control lblAutoresAsociados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAutoresAsociados;
+        
+        /// <summary>
+        /// Control rpAutor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpAutor;
+        
+        /// <summary>
         /// Control Button1.
         /// </summary>
         /// <remarks>
@@ -247,21 +310,21 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Control lblDesasociarProcedimiento.
+        /// Control lblDesasociarAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDesasociarProcedimiento;
+        protected global::System.Web.UI.WebControls.Label lblDesasociarAutor;
         
         /// <summary>
-        /// Control btnDesasociarProcedimiento.
+        /// Control btnDesasociarAutor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDesasociarProcedimiento;
+        protected global::System.Web.UI.WebControls.Button btnDesasociarAutor;
     }
 }

@@ -2,24 +2,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-       <!-- tabs -->
+
+    <!-- tabs -->
 
     <ul class="nav nav-tabs">
-        <li id="liDocumentoExterno" runat="server" class="active"><a onclick="verViewDocumentoExterno()">DocumentoExterno</a></li>
-        <li id="liAutor" runat="server"><a onclick="verViewAutor()">Autores</a></li>
-        <li id="liProcedimiento" runat="server"><a onclick="verViewProcedimientos()">Procedimientos</a></li>
-        <li id="liUbicacion" runat="server"><a onclick="verViewUbicaciones()">Ubicaciones</a></li>
+        <li id="liDocumentoExterno" runat="server" class="active"><a onclick="verViewDocumentoExterno()">Documento Externo</a></li>
+        <li id="liProcedimiento" runat="server"><a onclick="verViewProcedimiento()">Asociar procedimientos</a></li>
+        <li id="liAutor" runat="server"><a onclick="verViewAutores()">Agregar autores de documento</a></li>
     </ul>
     <!-- fin tabs -->
 
     <!-- ------------------------ VISTA DocumentoExterno --------------------------- -->
     <div id="ViewDocumentoExterno" runat="server" style="display: block">
         <div class="divCuadrado">
+
+
             <div class="row">
+
                 <%-- titulo accion--%>
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <center>
-                        <asp:Label ID="lblNuevaDocumentoExterno" runat="server" Text="Nuevo Documento Externo" Font-Size="Large" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="lblNuevaDocumentoExterno" runat="server" Text="Nueva DocumentoExterno" Font-Size="Large" ForeColor="Black"></asp:Label>
                     </center>
                 </div>
                 <%-- fin titulo accion --%>
@@ -29,15 +32,18 @@
                 </div>
 
                 <%-- campos a llenar --%>
-                <div class="col-md-12 col-xs-12 col-sm-12">
-                    <div class="col-md-2 col-xs-2 col-sm-2">
-                        <asp:Label ID="lblTipo" runat="server" Text="Tipo " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
-                    </div>
-                    <div class="col-md-4 col-xs-4 col-sm-4">
-                        <asp:DropDownList ID="ddlTipos" class="btn btn-default dropdown-toggle" runat="server"></asp:DropDownList>
-                    </div>
+               <div class="col-md-12 col-xs-12 col-sm-12">
 
+                <div class="col-md-2 col-xs-2 col-sm-2">
+                    <asp:Label ID="lblNombreProcedimiento" runat="server" Text="Nombre Documento<span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                 </div>
+                <div class="col-md-4 col-xs-4 col-sm-4">
+                    <asp:TextBox class="form-control" ID="txtNombreProcedimiento" TextMode="MultiLine" runat="server"></asp:TextBox>
+                </div>
+                <div id="divNombreProcedimientoIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
+                    <asp:Label ID="lblNombreProcedimientoIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
+                </div>
+            </div>
 
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <br />
@@ -46,7 +52,7 @@
 
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <div class="col-md-2 col-xs-2 col-sm-2">
-                        <asp:Label ID="lblAnno" runat="server" Text="Año " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                        <asp:Label ID="lblAnno" runat="server" Text="Año de emisión" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                     </div>
                     <div class="col-md-4 col-xs-4 col-sm-4">
                         <asp:TextBox ID="txtAnno" class="btn btn-default dropdown-toggle" runat="server" type="number"></asp:TextBox>
@@ -56,16 +62,39 @@
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <br />
                 </div>
+                 <div class="col-md-12 col-xs-12 col-sm-12">
 
-             
+                <div class="col-md-2 col-xs-2 col-sm-2">
+                    <asp:Label ID="lblVersion" runat="server" Text="Versión<span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                </div>
+                <div class="col-md-4 col-xs-4 col-sm-4">
+                    <asp:TextBox class="form-control" ID="txtVersion" runat="server"></asp:TextBox>
+                </div>
+                <div id="divVersionIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
+                    <asp:Label ID="lblVersionIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
+                </div>
+            </div>
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <br />
+            </div>
+
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                    <div class="col-md-2 col-xs-2 col-sm-2">
+                        <asp:Label ID="lblPresentacion" runat="server" Text="Presentación " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                    </div>
+                    <div class="col-md-4 col-xs-4 col-sm-4">
+                        <asp:DropDownList ID="ddlPresentacion" class="btn btn-default dropdown-toggle" runat="server" Width="150px">
+                            <asp:ListItem Text="Impreso" Value="digital" />
+                            <asp:ListItem Text="Digital" Value="impreso" />
+                            <asp:ListItem Text="Impreso y Digital" Value="impreso y digital" />
+
+                        </asp:DropDownList>
+                    </div>
+                </div>
 
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <br />
                 </div>
-
-
-     
-
 
 
 
@@ -95,8 +124,8 @@
     </div>
     <!-- ------------------------ FIN VISTA DocumentoExterno --------------------------- -->
 
-    <!-- ------------------------ VISTA Autores --------------------------- -->
-    <div id="ViewAutor" runat="server" style="display: none">
+    <!-- ------------------------ VISTA Procedimiento --------------------------- -->
+    <div id="ViewProcedimiento" runat="server" style="display: none">
 
         <div class="divCuadrado">
             <div class="row">
@@ -109,27 +138,27 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Asociar Autores</h4>
+                                <h4 class="modal-title">Asociar Procedimientos</h4>
                             </div>
                             <div class="modal-body">
                                 <%-- cuerpo modal --%>
 
                                 <div class="row">
 
-                                    <%-- Escoger Autores --%>
+                                    <%-- Escoger Procedimientos--%>
 
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <br />
                                     </div>
 
                                     <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
-                                        <asp:Repeater ID="rpElementoSinAsociar" runat="server">
+                                        <asp:Repeater ID="rpProcedimientoSinAsociar" runat="server">
                                             <HeaderTemplate>
-                                                <table id="tblElementoSinAsociar" class="row-border table-striped">
+                                                <table id="tblProcedimientoSinAsociar" class="row-border table-striped">
                                                     <thead>
                                                         <tr>
                                                             <th></th>
-                                                            <th>Descripción del Elemento</th>
+                                                            <th>Nombre del documento</th>
 
                                                         </tr>
                                                     </thead>
@@ -138,10 +167,10 @@
                                             <ItemTemplate>
                                                 <tr>
                                                     <td>
-                                                        <asp:LinkButton ID="btnAsocair" runat="server" ToolTip="Asociar" OnClick="btnAsociar_Click" CommandArgument='<%# Eval("idElemento") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
+                                                        <asp:LinkButton ID="btnAsocair" runat="server" ToolTip="Asociar" OnClick="btnAsociar_Click" CommandArgument='<%# Eval("idProcedimiento") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
                                                     </td>
                                                     <td>
-                                                        <%# Eval("descripcionElemento") %>
+                                                        <%# Eval("nombreDocumento") %>
                                                     </td>
 
                                                 </tr>
@@ -151,7 +180,7 @@
                                                 <thead>
                                                     <tr id="filterrow">
                                                         <td></td>
-                                                        <th>Descripcion del Elemento</th>
+                                                        <th>Nombre del documento</th>
 
                                                     </tr>
                                                 </thead>
@@ -164,7 +193,7 @@
                                         <br />
                                     </div>
 
-                                    <%-- fin Escoger Autores --%>
+                                    <%-- fin Escoger Procedimientos--%>
                                 </div>
 
                                 <%-- Fin cuerpo modal --%>
@@ -183,27 +212,27 @@
                     <br />
                 </div>
 
-                <%-- Mostrar Autores Asociados --%>
+                <%-- Mostrar ProcedimientosAsociados --%>
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <center>
-                        <asp:Label ID="lblAutoresAsociados" runat="server" Text="Autores asociados a la reunión" Font-Size="Large" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="lblProcedimientosAsociados" runat="server" Text="Procedimientos asociados a documento externo" Font-Size="Large" ForeColor="Black"></asp:Label>
                     </center>
                 </div>
-                <%-- fin Mostrar Autores Asociados --%>
+                <%-- fin Mostrar ProcedimientosAsociados --%>
 
                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                     <hr />
                 </div>
 
-                <%-- tabla mostar Autores asociados al laboratorio --%>
+                <%-- tabla mostar Procedimientosasociados al laboratorio --%>
                 <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
-                    <asp:Repeater ID="rpElemento" runat="server">
+                    <asp:Repeater ID="rpProcedimiento" runat="server">
                         <HeaderTemplate>
-                            <table id="tblElemento" class="row-border table-striped">
+                            <table id="tblProcedimiento" class="row-border table-striped">
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Descripción del Elemento</th>
+                                        <th>Nombre del documento</th>
 
                                     </tr>
                                 </thead>
@@ -212,10 +241,10 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                    <asp:LinkButton ID="btnDesasociar" runat="server" ToolTip="Desasociar" OnClick="btnDesasociar_Click" CommandArgument='<%# Eval("idElemento") %>'><span class="glyphicon glyphicon-remove-circle"></span></asp:LinkButton>
+                                    <asp:LinkButton ID="btnDesasociar" runat="server" ToolTip="Desasociar" OnClick="btnDesasociar_Click" CommandArgument='<%# Eval("idProcedimiento") %>'><span class="glyphicon glyphicon-remove-circle"></span></asp:LinkButton>
                                 </td>
                                 <td>
-                                    <%# Eval("descripcionElemento") %>
+                                    <%# Eval("nombreDocumento") %>
                                 </td>
                             </tr>
                         </ItemTemplate>
@@ -224,7 +253,7 @@
                             <thead>
                                 <tr id="filterrow">
                                     <td></td>
-                                    <th>Descripción del Elemento</th>
+                                    <th>Nombre del documento</th>
 
                                 </tr>
                             </thead>
@@ -240,7 +269,7 @@
                 <div class="col-md-3 col-xs-3 col-sm-3 col-md-offset-9 col-xs-offset-9 col-sm-offset-9">
                     <button id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Asociar</button>
                 </div>
-                <%-- fin tabla mostar Autores asociados al laboratorio --%>
+                <%-- fin tabla mostar Procedimientos asociados al documento externo --%>
 
                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                     <hr />
@@ -261,11 +290,11 @@
         </div>
 
     </div>
-    <!-- ------------------------ FIN VISTA Autores --------------------------- -->
+  
 
 
-    <!-- Modal Confirmar Desasociar Autores -->
-    <div id="modalDesasociarAutores" class="modal fade" role="alertdialog">
+    <!-- Modal Confirmar Desasociar Procedimientos -->
+    <div id="modalDesasociarProcedimientos" class="modal fade" role="alertdialog">
         <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
@@ -285,14 +314,14 @@
                         </div>
 
                         <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
-                            <asp:Label ID="lblDesasocaiarElemento" runat="server" Text="¿Está seguro o segura que desea desasociar el Autor?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                            <asp:Label ID="lblDesasocaiarProcedimiento" runat="server" Text="¿Está seguro o segura que desea desasociar el procedimiento ?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                         </div>
 
 
                     </div>
                 </div>
                 <div class="modal-footer" style="text-align: center">
-                    <asp:Button ID="btnDesasociarElemento" runat="server" Text="Si" CssClass="btn btn-primary" OnClick="btnDesasociarElementoConfirmar_Click" />
+                    <asp:Button ID="btnDesasociarProcedimiento" runat="server" Text="Si" CssClass="btn btn-primary" OnClick="btnDesasociarProcedimientoConfirmar_Click" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                 </div>
             </div>
@@ -301,15 +330,17 @@
     </div>
     <!-- Fin Confirmar Eliminar Norma -->
 
+      <!-- ------------------------ FIN VISTA Procedimientos --------------------------- -->
+
     <!--****************************************************************************************** -->
-    <!-- ------------------------ VISTA Procedimientos --------------------------- -->
-    <div id="ViewProcedimiento" runat="server" style="display: none">
+    <!-- ------------------------ VISTA Autores --------------------------- -->
+    <div id="ViewAutor" runat="server" style="display: none">
 
         <div class="divCuadrado">
             <div class="row">
 
                 <!-- Modal -->
-                <div id="myModalProcedimiento" class="modal fade" role="alertdialog">
+                <div id="myModalAutor" class="modal fade" role="alertdialog">
                     <div class="modal-dialog modal-lg">
 
                         <!-- Modal content-->
@@ -323,16 +354,16 @@
 
                                 <div class="row">
 
-                                    <%-- Escoger Procedimientos --%>
+                                    <%-- Escoger Autores --%>
 
                                     <div class="col-md-12 col-xs-12 col-sm-12">
                                         <br />
                                     </div>
 
                                     <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
-                                        <asp:Repeater ID="rpProcedimientoSinAsociar" runat="server">
+                                        <asp:Repeater ID="rpAutorSinAsociar" runat="server">
                                             <HeaderTemplate>
-                                                <table id="tblProcedimientoSinAsociar" class="row-border table-striped">
+                                                <table id="tblAutorSinAsociar" class="row-border table-striped">
                                                     <thead>
                                                         <tr>
                                                             <th></th>
@@ -345,7 +376,7 @@
                                             <ItemTemplate>
                                                 <tr>
                                                     <td>
-                                                        <asp:LinkButton ID="btnAsociar" runat="server" ToolTip="Asociar" OnClick="btnAsociarProcedimiento_Click" CommandArgument='<%# Eval("idProcedimiento") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
+                                                        <asp:LinkButton ID="btnAsociar" runat="server" ToolTip="Asociar" OnClick="btnAsociarAutor_Click" CommandArgument='<%# Eval("idAutor") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
                                                     </td>
                                                     <td>
                                                         <%# Eval("nombre") %>
@@ -371,7 +402,7 @@
                                         <br />
                                     </div>
 
-                                    <%-- fin Escoger Autores --%>
+                                    <%-- fin Escoger Procedimientos--%>
                                 </div>
 
                                 <%-- Fin cuerpo modal --%>
@@ -390,23 +421,23 @@
                     <br />
                 </div>
 
-                <%-- Mostrar Procedimientos Asociados --%>
+                <%-- Mostrar Autors Asociados --%>
                 <div class="col-md-12 col-xs-12 col-sm-12">
                     <center>
-                        <asp:Label ID="lblProcedimientosAsociados" runat="server" Text="Participantes en la reunión" Font-Size="Large" ForeColor="Black"></asp:Label>
+                        <asp:Label ID="lblAutoresAsociados" runat="server" Text="Autores de Documento" Font-Size="Large" ForeColor="Black"></asp:Label>
                     </center>
                 </div>
-                <%-- fin Mostrar Procedimientos Asociados --%>
+                <%-- fin Mostrar Autors Asociados --%>
 
                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                     <hr />
                 </div>
 
-                <%-- tabla mostar Procedimientos asociados a la reunion --%>
+                <%-- tabla mostar Autors asociados a la reunion --%>
                 <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
-                    <asp:Repeater ID="rpProcedimiento" runat="server">
+                    <asp:Repeater ID="rpAutor" runat="server">
                         <HeaderTemplate>
-                            <table id="tblProcedimiento" class="row-border table-striped">
+                            <table id="tblAutor" class="row-border table-striped">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -419,7 +450,7 @@
                         <ItemTemplate>
                             <tr>
                                 <td>
-                                    <asp:LinkButton ID="btnDesasociar" runat="server" ToolTip="Desasociar" OnClick="btnDesasociarProcedimiento_Click" CommandArgument='<%# Eval("idProcedimiento") %>'><span class="glyphicon glyphicon-remove-circle"></span></asp:LinkButton>
+                                    <asp:LinkButton ID="btnDesasociar" runat="server" ToolTip="Desasociar" OnClick="btnDesasociarAutor_Click" CommandArgument='<%# Eval("idAutor") %>'><span class="glyphicon glyphicon-remove-circle"></span></asp:LinkButton>
                                 </td>
                                 <td>
                                     <%# Eval("nombre") %>
@@ -445,9 +476,9 @@
                 </div>
 
                 <div class="col-md-3 col-xs-3 col-sm-3 col-md-offset-9 col-xs-offset-9 col-sm-offset-9">
-                    <button id="btnModalProcedimiento" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalProcedimiento">Asociar</button>
+                    <button id="btnModalAutor" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalAutor">Asociar</button>
                 </div>
-                <%-- fin tabla mostar usuarios asociados a la reunion --%>
+                <%-- fin tabla mostar autores asociados al documento--%>
 
                 <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                     <hr />
@@ -468,11 +499,11 @@
         </div>
 
     </div>
-    <!-- ------------------------ FIN VISTA Procedimientos --------------------------- -->
+    <!-- ------------------------ FIN VISTA Autors --------------------------- -->
 
 
-    <!-- Modal Confirmar Desasociar Procedimientos -->
-    <div id="modalDesasociarProcedimientos" class="modal fade" role="alertdialog">
+    <!-- Modal Confirmar Desasociar Autores -->
+    <div id="modalDesasociarAutores" class="modal fade" role="alertdialog">
         <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
@@ -492,14 +523,14 @@
                         </div>
 
                         <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
-                            <asp:Label ID="lblDesasociarProcedimiento" runat="server" Text="¿Está seguro o segura que desea desasociar el usuario de la reunión ?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                            <asp:Label ID="lblDesasociarAutor" runat="server" Text="¿Está seguro o segura que desea desasociar el autor del documento ?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                         </div>
 
 
                     </div>
                 </div>
                 <div class="modal-footer" style="text-align: center">
-                    <asp:Button ID="btnDesasociarProcedimiento" runat="server" Text="Si" CssClass="btn btn-primary" OnClick="btnDesasociarProcedimientoConfirmar_Click" />
+                    <asp:Button ID="btnDesasociarAutor" runat="server" Text="Si" CssClass="btn btn-primary" OnClick="btnDesasociarAutorConfirmar_Click" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                 </div>
             </div>
@@ -513,169 +544,23 @@
     <!-- script tabla jquery -->
     <script type="text/javascript">
 
-        function activarModalDesasociarAutores() {
-            $('#modalDesasociarAutores').modal('show');
-        };
-
         function activarModalDesasociarProcedimientos() {
             $('#modalDesasociarProcedimientos').modal('show');
         };
 
-
-        /*tabla Elemento asociados*/
-        $('#tblElemento thead tr#filterrow th').each(function () {
-            var campoBusqueda = $('#tblElemento thead th').eq($(this).index()).text();
-            $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
-        });
-
-        // DataTable
-        var table = $('#tblElemento').DataTable({
-            orderCellsTop: true,
-            "iDisplayLength": 10,
-            "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
-            "colReorder": true,
-            "select": false,
-            "stateSave": true,
-            "dom": 'Bfrtip',
-            "buttons": [
-                'pdf', 'excel', 'copy', 'print'
-            ],
-            "language": {
-                "sProcessing": "Procesando...",
-                "sLengthMenu": "Mostrar _MENU_ registros",
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
-                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                "sInfoPostFix": "",
-                "sSearch": "Buscar:",
-                "sUrl": "",
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Cargando...",
-                "decimal": ",",
-                "thousands": ".",
-                "sSelect": "1 fila seleccionada",
-                "select": {
-                    rows: {
-                        _: "Ha seleccionado %d filas",
-                        0: "Dele click a una fila para seleccionarla",
-                        1: "1 fila seleccionada"
-                    }
-                },
-                "oPaginate": {
-                    "sFirst": "Primero",
-                    "sLast": "Último",
-                    "sNext": "Siguiente",
-                    "sPrevious": "Anterior"
-                },
-                "oAria": {
-                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                }
-            }
-        });
-
-        // aplicar filtro
-        $("#tblElemento thead input").on('keyup change', function () {
-            table
-                .column($(this).parent().index() + ':visible')
-                .search(this.value)
-                .draw();
-        });
-        /*fin tabla Autores asociados*/
-
-        /*tabla Autores sin asociados*/
-        $('#tblElementoSinAsociar thead tr#filterrow th').each(function () {
-            var campoBusqueda = $('#tblElementoSinAsociar thead th').eq($(this).index()).text();
-            $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
-        });
-
-        // DataTable
-        var tblElementoSinAsociar = $('#tblElementoSinAsociar').DataTable({
-            orderCellsTop: true,
-            "iDisplayLength": 10,
-            "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
-            "colReorder": true,
-            "select": false,
-            "stateSave": true,
-            "dom": 'Bfrtip',
-            "buttons": [
-                'pdf', 'excel', 'copy', 'print'
-            ],
-            "language": {
-                "sProcessing": "Procesando...",
-                "sLengthMenu": "Mostrar _MENU_ registros",
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
-                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                "sInfoPostFix": "",
-                "sSearch": "Buscar:",
-                "sUrl": "",
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Cargando...",
-                "decimal": ",",
-                "thousands": ".",
-                "sSelect": "1 fila seleccionada",
-                "select": {
-                    rows: {
-                        _: "Ha seleccionado %d filas",
-                        0: "Dele click a una fila para seleccionarla",
-                        1: "1 fila seleccionada"
-                    }
-                },
-                "oPaginate": {
-                    "sFirst": "Primero",
-                    "sLast": "Último",
-                    "sNext": "Siguiente",
-                    "sPrevious": "Anterior"
-                },
-                "oAria": {
-                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                }
-            }
-        });
-
-        // aplicar filtro
-        $("#tblElementoSinAsociar thead input").on('keyup change', function () {
-            tblElementoSinAsociar
-                .column($(this).parent().index() + ':visible')
-                .search(this.value)
-                .draw();
-        });
-        /*fin tabla Autores sin asociados*/
-
-
-
-        $('#tblElemento tbody').on('click', 'tr', function () {
-            var prueba = table.row(this).data();
-        });
-
-        function stopPropagation(evt) {
-            if (evt.stopPropagation !== undefined) {
-                evt.stopPropagation();
-            } else {
-                evt.cancelBubble = true;
-            }
-        }
-
-        function activarModal() {
-            $('#myModal').modal('show');
+        function activarModalDesasociarAutores() {
+            $('#modalDesasociarAutores').modal('show');
         };
 
-        ///////////////////////
 
-        /*tabla Procedimientos asociados*/
-        $('#tblElemento thead tr#filterrow th').each(function () {
-            var campoBusqueda = $('#tblElemento thead th').eq($(this).index()).text();
+        /*tabla Procedimiento asociados*/
+        $('#tblProcedimiento thead tr#filterrow th').each(function () {
+            var campoBusqueda = $('#tblProcedimiento thead th').eq($(this).index()).text();
             $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
         });
 
         // DataTable
-        var table2 = $('#tblProcedimiento').DataTable({
+        var table = $('#tblProcedimiento').DataTable({
             orderCellsTop: true,
             "iDisplayLength": 10,
             "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
@@ -729,9 +614,9 @@
                 .search(this.value)
                 .draw();
         });
-        /*fin tabla Procedimientos asociados*/
+        /*fin tabla Procedimientosasociados*/
 
-        /*tabla Procedimiento sin asociar*/
+        /*tabla Procedimientossin asociados*/
         $('#tblProcedimientoSinAsociar thead tr#filterrow th').each(function () {
             var campoBusqueda = $('#tblProcedimientoSinAsociar thead th').eq($(this).index()).text();
             $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
@@ -792,7 +677,7 @@
                 .search(this.value)
                 .draw();
         });
-        /*fin tabla Procedimientos sin asociados*/
+        /*fin tabla Procedimientossin asociados*/
 
 
 
@@ -800,8 +685,154 @@
             var prueba = table.row(this).data();
         });
 
-        function activarModalProcedimiento() {
-            $('#myModalProcedimiento').modal('show');
+        function stopPropagation(evt) {
+            if (evt.stopPropagation !== undefined) {
+                evt.stopPropagation();
+            } else {
+                evt.cancelBubble = true;
+            }
+        }
+
+        function activarModal() {
+            $('#myModal').modal('show');
+        };
+
+        ///////////////////////
+
+        /*tabla Autors asociados*/
+        $('#tblAutor thead tr#filterrow th').each(function () {
+            var campoBusqueda = $('#tblProcedimiento thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
+        });
+
+        // DataTable
+        var table2 = $('#tblAutor').DataTable({
+            orderCellsTop: true,
+            "iDisplayLength": 10,
+            "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
+            "colReorder": true,
+            "select": false,
+            "stateSave": true,
+            "dom": 'Bfrtip',
+            "buttons": [
+                'pdf', 'excel', 'copy', 'print'
+            ],
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "decimal": ",",
+                "thousands": ".",
+                "sSelect": "1 fila seleccionada",
+                "select": {
+                    rows: {
+                        _: "Ha seleccionado %d filas",
+                        0: "Dele click a una fila para seleccionarla",
+                        1: "1 fila seleccionada"
+                    }
+                },
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+        });
+
+        // aplicar filtro
+        $("#tblAutor thead input").on('keyup change', function () {
+            table
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+        /*fin tabla Autors asociados*/
+
+        /*tabla Autor sin asociar*/
+        $('#tblAutorSinAsociar thead tr#filterrow th').each(function () {
+            var campoBusqueda = $('#tblAutorSinAsociar thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
+        });
+
+        // DataTable
+        var tblAutorSinAsociar = $('#tblAutorSinAsociar').DataTable({
+            orderCellsTop: true,
+            "iDisplayLength": 10,
+            "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
+            "colReorder": true,
+            "select": false,
+            "stateSave": true,
+            "dom": 'Bfrtip',
+            "buttons": [
+                'pdf', 'excel', 'copy', 'print'
+            ],
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "decimal": ",",
+                "thousands": ".",
+                "sSelect": "1 fila seleccionada",
+                "select": {
+                    rows: {
+                        _: "Ha seleccionado %d filas",
+                        0: "Dele click a una fila para seleccionarla",
+                        1: "1 fila seleccionada"
+                    }
+                },
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+        });
+
+        // aplicar filtro
+        $("#tblAutorSinAsociar thead input").on('keyup change', function () {
+            tblAutorSinAsociar
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+        /*fin tabla Autors sin asociados*/
+
+
+
+        $('#tblAutor tbody').on('click', 'tr', function () {
+            var prueba = table.row(this).data();
+        });
+
+        function activarModalAutor() {
+            $('#myModalAutor').modal('show');
         };
 
 
@@ -812,32 +843,7 @@
 
     <script type="text/javascript">
 
-        function verViewAutor() {
-            document.getElementById('<%=liAutor.ClientID%>').className = "active";
-            document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
-            document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
-
-
-
-            document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'block';
-            document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'none';
-            document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
-
-        };
-
-        function verViewDocumentoExterno() {
-            document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "active";
-            document.getElementById('<%=liAutor.ClientID%>').className = "";
-            document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
-
-
-            document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'block';
-            document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'none';
-            document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
-
-        };
-
-        function verViewProcedimientos() {
+        function verViewProcedimiento() {
             document.getElementById('<%=liProcedimiento.ClientID%>').className = "active";
             document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
             document.getElementById('<%=liAutor.ClientID%>').className = "";
@@ -850,34 +856,65 @@
 
         };
 
-         function verViewUbicaciones() {
-           <%-- document.getElementById('<%=liProcedimiento.ClientID%>').className = "active";
-            document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
+        function verViewDocumentoExterno() {
+            document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "active";
+            document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
             document.getElementById('<%=liAutor.ClientID%>').className = "";
 
 
+            document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'block';
+            document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
+            document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'none';
 
-            document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'block';
+        };
+
+        function verViewAutores() {
+            document.getElementById('<%=liAutor.ClientID%>').className = "active";
+            document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
+            document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
+
+
+
+            document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'block';
             document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'none';
-            document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'none';--%>
+            document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
 
         };
 
-        function validarArchivos(fileUpload) {
-            var id = fileUpload.id.substring(12);
+      /*
+        Evalúa de manera inmediata los campos de texto que va ingresando el usuario.
+        */
+        function validarTexto(txtBox) {
+            var id = txtBox.id.substring(12);
 
-            var divArchivoIncorrecta = document.getElementById('<%= divArchivosVacio.ClientID %>');
+            if (id == "txtNombreProcedimiento") {
+                var nombreProcedimientoIncorrecto = document.getElementById('<%= divNombreProcedimientoIncorrecto.ClientID %>');
+                if (txtBox.value != "") {
+                    txtBox.className = "form-control";
 
-            if (fileUpload.files.length > 0) {
-                divArchivoIncorrecta.style.display = "none";
+                    nombreProcedimientoIncorrecto.style.display = 'none';
+                } else {
+                    txtBox.className = "form-control alert-danger";
+                    nombreProcedimientoIncorrecto.style.display = 'block';
+                }
             } else {
-                divArchivoIncorrecta.style.display = "block";
-            }
-        };
+                    if (id == "txtCodigotxtVersion") {
+                        var observacionesIncorrecto = document.getElementById('<%= divVersionIncorrecto.ClientID %>');
+                        if (txtBox.value != "") {
+                            txtBox.className = "form-control";
 
+                            observacionesIncorrecto.style.display = 'none';
+                        } else {
+                            txtBox.className = "form-control alert-danger";
+                            observacionesIncorrecto.style.display = 'block';
+                        }
+
+                    }
+                }
+            }
+              
 
 
     </script>
 
 </asp:Content>
-
