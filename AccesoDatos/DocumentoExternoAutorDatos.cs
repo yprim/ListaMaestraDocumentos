@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-    class DocumentoExternoAutorDatos
+    public class DocumentoExternoAutorDatos
     {
     }
 }

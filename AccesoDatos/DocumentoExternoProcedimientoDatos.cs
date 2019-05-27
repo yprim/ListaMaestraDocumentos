@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AccesoDatos
 {
-    class DocumentoExternoProcedimientoDatos
+  public  class DocumentoExternoProcedimientoDatos
     {
     }
 }

@@ -137,6 +137,91 @@ namespace AccesoDatos
             sqlConnection.Close();
 
         }
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todas las ubicaciones que no estan asociados a una reunión
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de ubicaciones
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Ubicacion> getUbicacionesNoEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            List<Ubicacion> listaElementos = new List<Ubicacion>();
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"select U.id_udicacion,U.nombre_ubicacion
+               from Ubicacion U
+                 where   U.id_udicacion not in (select RE.idElemento 
+                 from DocumentoExterno_Ubicacion RE 
+                 where RE.idDocumentoExterno = @idDocumentoExterno ) 
+             order by E.descripcionElemento;", sqlConnection);
+
+            SqlDataReader reader;
+
+            sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
+
+            sqlConnection.Open();
+            reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Ubicacion ubicacion = new Ubicacion();
+
+                ubicacion.idUbicacion = Convert.ToInt32(reader["id_ubicacion"].ToString());
+                ubicacion.nombre = reader["nombre_ubicacion"].ToString();
+                listaElementos.Add(ubicacion);
+            }
+
+            sqlConnection.Close();
+
+            return listaElementos;
+
+        }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todos los ubicaciones que ya están asociadas al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de ubicaciones
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Ubicacion> getUbicacionesEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            List<Ubicacion> listaElementos = new List<Ubicacion>();
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"select U.id_udicacion,U.nombre_ubicacion
+               from Ubicacion U,Documento_Externo_Ubicacion DU 
+                where DU.id_documento_externo = @id_documento_externo  and U.id_udicacion = DU.id_ubicacion
+                 order by U.nombre_ubicacion;", sqlConnection);
+
+            SqlDataReader reader;
+
+            sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
+
+            sqlConnection.Open();
+            reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Ubicacion ubicacion = new Ubicacion();
+
+                ubicacion.idUbicacion = Convert.ToInt32(reader["id_ubicacion"].ToString());
+                ubicacion.nombre = reader["nombre_ubicacion"].ToString();
+                listaElementos.Add(ubicacion);
+            }
+
+            sqlConnection.Close();
+
+            return listaElementos;
+
+        }
         #endregion
     }
 }

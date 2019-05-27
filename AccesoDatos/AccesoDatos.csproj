@@ -44,7 +44,10 @@
     <Compile Include="AprobadorDatos.cs" />
     <Compile Include="AutorDatos.cs" />
     <Compile Include="ConexionDatos.cs" />
+    <Compile Include="DocumentoExternoAutorDatos.cs" />
     <Compile Include="DocumentoExternoDatos.cs" />
+    <Compile Include="DocumentoExternoProcedimientoDatos.cs" />
+    <Compile Include="DocumentoExternoUbicacionDatos.cs" />
     <Compile Include="EstadoDatos.cs" />
     <Compile Include="ProcedimientoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

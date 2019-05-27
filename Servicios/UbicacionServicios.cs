@@ -78,6 +78,21 @@ namespace Servicios
         {
             ubicacionDatos.eliminarUbicacion(ubicacion);
         }
-        #endregion
-    }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todos los ubicaciones que ya están asociadas al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de ubicaciones
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Ubicacion> getUbicacionesEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            return ubicacionDatos.getUbicacionesEstanEnDocumentoExterno( documentoExterno);
+
+        }
+            #endregion
+        }
 }
