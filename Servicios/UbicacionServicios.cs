@@ -93,6 +93,24 @@ namespace Servicios
             return ubicacionDatos.getUbicacionesEstanEnDocumentoExterno( documentoExterno);
 
         }
-            #endregion
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todas las ubicaciones que no estan asociados al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de ubicaciones
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Ubicacion> getUbicacionesNoEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+          
+
+            return ubicacionDatos.getUbicacionesNoEstanEnDocumentoExterno(documentoExterno);
+
         }
+
+        #endregion
+    }
 }

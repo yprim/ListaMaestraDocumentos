@@ -49,7 +49,42 @@ namespace Servicios
         {
             return procedimientoDatos.insertarProcedimiento(procedimiento);
         }
-            #endregion
+
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 30/05/2019
+        /// Efecto: recupera todos los procedimientoes que no estan asociados al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de procedimientoes
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Procedimiento> getProcedimientosNoEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+           
+
+            return procedimientoDatos.getProcedimientosNoEstanEnDocumentoExterno(documentoExterno);
 
         }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 30/05/2019
+        /// Efecto: recupera todos los procedimientoes que ya están asociadas al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de procedimientoes
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Procedimiento> getProcedimientosEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+           
+
+            return procedimientoDatos.getProcedimientosEstanEnDocumentoExterno(documentoExterno);
+
+        }
+        #endregion
+
+    }
 }

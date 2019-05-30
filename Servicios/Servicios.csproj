@@ -44,7 +44,10 @@
     <Compile Include="AprobadorServicios.cs" />
     <Compile Include="AutorServicios.cs" />
     <Compile Include="ConexionServicios.cs" />
+    <Compile Include="DocumentoExternoAutorServicios.cs" />
+    <Compile Include="DocumentoExternoProcedimientoServicios.cs" />
     <Compile Include="DocumentoExternoServicios.cs" />
+    <Compile Include="DocumentoExternoUbicacionServicios.cs" />
     <Compile Include="EstadoServicios.cs" />
     <Compile Include="ProcedimientoServicios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

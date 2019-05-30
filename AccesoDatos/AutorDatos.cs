@@ -137,6 +137,94 @@ namespace AccesoDatos
             sqlConnection.Close();
 
         }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todos los autores que no estan asociados al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de autores
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Autor> getAutoresNoEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            List<Autor> listaElementos = new List<Autor>();
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"select A.id_autor,A.nombre_autor
+               from Autor A
+                 where   A.id_autor not in (select DA.id_autor 
+                 from Documento_Externo_Autor DA 
+                 where DA.id_documento_externo = @id_documento_externo ) 
+             order by A.nombre_autor;", sqlConnection);
+
+            SqlDataReader reader;
+
+            sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
+
+            sqlConnection.Open();
+            reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Autor autor = new Autor();
+
+                autor.idAutor = Convert.ToInt32(reader["id_autor"].ToString());
+                autor.nombre = reader["nombre_autor"].ToString();
+                listaElementos.Add(autor);
+            }
+
+            sqlConnection.Close();
+
+            return listaElementos;
+
+        }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todos los autores que ya están asociadas al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de autores
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Autor> getAutoresEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            List<Autor> listaAutores = new List<Autor>();
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"select A.id_autor,U.nombre_autor
+               from Autor A,Documento_Externo_Autor DA 
+                where DA.id_documento_externo = @id_documento_externo  and A.id_autor = DA.id_autor
+                 order by A.nombre_autor;", sqlConnection);
+
+            SqlDataReader reader;
+
+            sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
+
+            sqlConnection.Open();
+            reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Autor autor = new Autor();
+
+                autor.idAutor = Convert.ToInt32(reader["id_autor"].ToString());
+                autor.nombre = reader["nombre_autor"].ToString();
+                listaAutores.Add(autor);
+            }
+
+            sqlConnection.Close();
+
+            return listaAutores;
+
+        }
+
+
         #endregion
     }
 }

@@ -15,7 +15,9 @@ namespace AccesoDatos
     /// </summary>
     public class DocumentoExternoUbicacionDatos
     {
+        #region variables
         private ConexionDatos conexion = new ConexionDatos();
+        #endregion
 
         #region consultas
         /// <summary>

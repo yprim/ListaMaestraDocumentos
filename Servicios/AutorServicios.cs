@@ -76,6 +76,40 @@ namespace Servicios
 
             autorDatos.eliminarAutor(autor);
         }
+
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todos los autores que no estan asociados al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de autores
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Autor> getAutoresNoEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            
+         return autorDatos.getAutoresNoEstanEnDocumentoExterno(documentoExterno);
+
+        }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/05/2019
+        /// Efecto: recupera todos los autores que ya están asociados al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de autores
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Autor> getAutoresEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+          
+
+            return autorDatos.getAutoresEstanEnDocumentoExterno(documentoExterno);
+
+        }
         #endregion
 
     }

@@ -162,6 +162,94 @@ namespace AccesoDatos
         }
 
 
+        /// <summary>
+        /// Priscilla Mena
+        /// 30/05/2019
+        /// Efecto: recupera todos los procedimientoes que no estan asociados al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de procedimientoes
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Procedimiento> getProcedimientosNoEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            List<Procedimiento> listaElementos = new List<Procedimiento>();
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"select  P.id_procedimiento, P.nombre_documento_procedimiento
+               from Procedimiento P
+                 where P.id_procedimiento not in (select DP.id_procedimiento 
+                 from Documento_Externo_Procedimiento DP 
+                 where DP.id_documento_externo = @id_documento_externo ) 
+             order by P.nombre_documento_procedimiento;", sqlConnection);
+
+            SqlDataReader reader;
+
+            sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
+
+            sqlConnection.Open();
+            reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Procedimiento procedimiento = new Procedimiento();
+
+                procedimiento.idProcedimiento = Convert.ToInt32(reader["id_procedimiento"].ToString());
+                procedimiento.nombreDocumento = reader["nombre_documento_procedimiento"].ToString();
+                listaElementos.Add(procedimiento);
+            }
+
+            sqlConnection.Close();
+
+            return listaElementos;
+
+        }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 30/05/2019
+        /// Efecto: recupera todos los procedimientoes que ya están asociadas al documento externo
+        /// Requiere: documentoExterno
+        /// Modifica: -
+        /// Devuelve: lista de procedimientoes
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        public List<Procedimiento> getProcedimientosEstanEnDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            List<Procedimiento> listaProcedimientos = new List<Procedimiento>();
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"select P.id_procedimiento, P.nombre_documento_procedimiento
+               from Procedimiento P,Documento_Externo_Procedimiento DP
+                where DP.id_documento_externo = @id_documento_externo  and P.id_procedimiento = DP.id_procedimiento
+                 order by P.nombre_documento_procedimiento;", sqlConnection);
+
+            SqlDataReader reader;
+
+            sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
+
+            sqlConnection.Open();
+            reader = sqlCommand.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Procedimiento procedimiento = new Procedimiento();
+
+                procedimiento.idProcedimiento = Convert.ToInt32(reader["id_procedimiento"].ToString());
+                procedimiento.nombreDocumento = reader["nombre_documento_procedimiento"].ToString();
+                listaProcedimientos.Add(procedimiento);
+            }
+
+            sqlConnection.Close();
+
+            return listaProcedimientos;
+
+        }
+
+
+
 
         #endregion
     }

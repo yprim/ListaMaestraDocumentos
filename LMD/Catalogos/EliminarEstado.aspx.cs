@@ -26,7 +26,7 @@ namespace LMD.Catalogos
 
             if (!IsPostBack)
             {
-                Estado estado = (Estado)Session["EstadoEliminar"];
+                Estado estado = (Estado)Session["estadoEliminar"];
                 txtNombreEstado.Text = estado.nombre;
 
             }
@@ -52,7 +52,7 @@ namespace LMD.Catalogos
         /// <returns></returns>
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Estado Estado = (Estado)Session["EstadoEliminar"];
+            Estado Estado = (Estado)Session["estadoEliminar"];
 
             try
             {

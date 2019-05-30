@@ -45,19 +45,19 @@ internal static class Utilidades
 
     public static void SetLogDirectory()
     {
-        if (Directory.Exists(logs_path))
-        {
-            Directory.SetCurrentDirectory(logs_path);
-        }
-        else
-        {
-            Directory.CreateDirectory(logs_path);
-            Directory.SetCurrentDirectory(logs_path);
-        }
-        FileStream archivo = new FileStream("Error.log", FileMode.OpenOrCreate);
-        archivo.Close();
+            if (Directory.Exists(logs_path))
+            {
+                Directory.SetCurrentDirectory(logs_path);
+            }
+            else
+            {
+                Directory.CreateDirectory(logs_path);
+                Directory.SetCurrentDirectory(logs_path);
+            }
+            FileStream archivo = new FileStream("Error.log", FileMode.OpenOrCreate);
+            archivo.Close();
 
-    }
+        }
 
     public static bool IsPDF(string txt)
     {
