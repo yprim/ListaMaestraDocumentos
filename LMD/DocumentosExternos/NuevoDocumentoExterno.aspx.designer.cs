@@ -238,13 +238,13 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.WebControls.Button btnRegresar;
         
         /// <summary>
-        /// Control lblDesasocaiarProcedimiento.
+        /// Control lblDesasociarProcedimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDesasocaiarProcedimiento;
+        protected global::System.Web.UI.WebControls.Label lblDesasociarProcedimiento;
         
         /// <summary>
         /// Control btnDesasociarProcedimiento.

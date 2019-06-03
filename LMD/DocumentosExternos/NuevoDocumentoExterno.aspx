@@ -131,7 +131,7 @@
             <div class="row">
 
                 <!-- Modal -->
-                <div id="myModal" class="modal fade" role="alertdialog">
+                <div id="myModalProcedimiento" class="modal fade" role="alertdialog">
                     <div class="modal-dialog modal-lg">
 
                         <!-- Modal content-->
@@ -167,7 +167,7 @@
                                             <ItemTemplate>
                                                 <tr>
                                                     <td>
-                                                        <asp:LinkButton ID="btnAsocair" runat="server" ToolTip="Asociar" OnClick="btnAsociar_Click" CommandArgument='<%# Eval("idProcedimiento") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
+                                                        <asp:LinkButton ID="btnAsociar" runat="server" ToolTip="Asociar" OnClick="btnAsociar_Click" CommandArgument='<%# Eval("idProcedimiento") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
                                                     </td>
                                                     <td>
                                                         <%# Eval("nombreDocumento") %>
@@ -224,7 +224,7 @@
                     <hr />
                 </div>
 
-                <%-- tabla mostar Procedimientosasociados al laboratorio --%>
+                <%-- tabla mostar Procedimientosasociados al documento externo --%>
                 <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
                     <asp:Repeater ID="rpProcedimiento" runat="server">
                         <HeaderTemplate>
@@ -267,7 +267,7 @@
                 </div>
 
                 <div class="col-md-3 col-xs-3 col-sm-3 col-md-offset-9 col-xs-offset-9 col-sm-offset-9">
-                    <button id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Asociar</button>
+                    <button id="btnModal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalProcedimiento">Asociar</button>
                 </div>
                 <%-- fin tabla mostar Procedimientos asociados al documento externo --%>
 
@@ -314,7 +314,7 @@
                         </div>
 
                         <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
-                            <asp:Label ID="lblDesasocaiarProcedimiento" runat="server" Text="¿Está seguro o segura que desea desasociar el procedimiento ?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                            <asp:Label ID="lblDesasociarProcedimiento" runat="server" Text="¿Está seguro o segura que desea desasociar el procedimiento ?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                         </div>
 
 
@@ -328,7 +328,7 @@
 
         </div>
     </div>
-    <!-- Fin Confirmar Eliminar Norma -->
+    <!-- Fin Confirmar Desasociar Procedimiento -->
 
       <!-- ------------------------ FIN VISTA Procedimientos --------------------------- -->
 
@@ -347,7 +347,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Agregar participantes a reunión</h4>
+                                <h4 class="modal-title">Agregar autores al documento</h4>
                             </div>
                             <div class="modal-body">
                                 <%-- cuerpo modal --%>
@@ -499,7 +499,7 @@
         </div>
 
     </div>
-    <!-- ------------------------ FIN VISTA Autors --------------------------- -->
+    <!-- ------------------------ FIN VISTA Autor --------------------------- -->
 
 
     <!-- Modal Confirmar Desasociar Autores -->
@@ -693,8 +693,8 @@
             }
         }
 
-        function activarModal() {
-            $('#myModal').modal('show');
+        function activarModalProcedimiento() {
+            $('#myModalProcedimiento').modal('show');
         };
 
         ///////////////////////
@@ -898,15 +898,15 @@
                     nombreProcedimientoIncorrecto.style.display = 'block';
                 }
             } else {
-                    if (id == "txtCodigotxtVersion") {
-                        var observacionesIncorrecto = document.getElementById('<%= divVersionIncorrecto.ClientID %>');
+                    if (id == "txtVersion") {
+                        var versionIncorrecto = document.getElementById('<%= divVersionIncorrecto.ClientID %>');
                         if (txtBox.value != "") {
                             txtBox.className = "form-control";
 
-                            observacionesIncorrecto.style.display = 'none';
+                            versionIncorrecto.style.display = 'none';
                         } else {
                             txtBox.className = "form-control alert-danger";
-                            observacionesIncorrecto.style.display = 'block';
+                            versionIncorrecto.style.display = 'block';
                         }
 
                     }

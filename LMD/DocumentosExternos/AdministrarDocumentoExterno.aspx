@@ -30,6 +30,7 @@
                                     <th>Nombre del documento</th>
                                     <th>Año de emisión</th>
                                     <th>Versión</th>
+                                    <th>Presentacion</th>
                                 </tr>
                             </thead>
                     </HeaderTemplate>
@@ -49,6 +50,9 @@
                             </td>
                             <td>
                                 <%# Eval("version") %>
+                            </td>
+                             <td>
+                                <%# Eval("presentacion") %>
                             </td>
                              
                         </tr>

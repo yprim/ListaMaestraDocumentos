@@ -29,6 +29,24 @@ namespace Servicios
         {
             return documentoExternoDatos.getDocumentosExternos(idSistema);
         }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 03/06/2019
+        /// Efecto: inserta en la base de datos un estado
+        /// Requiere: estado
+        /// Modifica: -
+        /// Devuelve: id del estado insertado
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        /// <returns></returns>
+        public int insertarDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+          
+
+            return documentoExternoDatos.insertarDocumentoExterno(documentoExterno);
+        }
+
         #endregion
     }
 }

@@ -196,7 +196,7 @@ namespace AccesoDatos
             List<Autor> listaAutores = new List<Autor>();
             SqlConnection sqlConnection = conexion.conexionLMD();
 
-            SqlCommand sqlCommand = new SqlCommand(@"select A.id_autor,U.nombre_autor
+            SqlCommand sqlCommand = new SqlCommand(@"select A.id_autor,A.nombre_autor
                from Autor A,Documento_Externo_Autor DA 
                 where DA.id_documento_externo = @id_documento_externo  and A.id_autor = DA.id_autor
                  order by A.nombre_autor;", sqlConnection);

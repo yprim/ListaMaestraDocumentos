@@ -62,6 +62,7 @@ namespace AccesoDatos
                 documentoExterno.annoEmision = reader["anno_emision"].ToString();
                 documentoExterno.version = reader["version"].ToString();
                 documentoExterno.activo = reader["activo"].ToString();
+                documentoExterno.presentacion = reader["presentacion"].ToString();
 
 
                 //recupera sistema
@@ -77,6 +78,54 @@ namespace AccesoDatos
 
             return listaDocumentosExternos;
         }
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 03/06/2019
+        /// Efecto: inserta en la base de datos un estado
+        /// Requiere: estado
+        /// Modifica: -
+        /// Devuelve: id del estado insertado
+        /// </summary>
+        /// <param name="documentoExterno"></param>
+        /// <returns></returns>
+        public int insertarDocumentoExterno(DocumentoExterno documentoExterno)
+        {
+            SqlConnection sqlConnection = conexion.conexionLMD();
+
+            SqlCommand sqlCommand = new SqlCommand(@"INSERT into Documento_Externo
+                   (id_sistema
+                   ,nombre_documento_externo
+                   ,anno_emision
+                   ,version
+                   ,presentacion
+                   ,activo)
+             VALUES
+                   (@id_sistema 
+                   ,@nombre_documento_externo 
+                   ,@anno_emision
+                   ,@version 
+                   ,@presentacion 
+                   ,@activo)
+                   SELECT SCOPE_IDENTITY();", sqlConnection);
+
+            sqlCommand.Parameters.AddWithValue("@id_sistema", documentoExterno.sistema.idSistema);
+             sqlCommand.Parameters.AddWithValue("@nombre_documento_externo", documentoExterno.nombreDocumento);
+            sqlCommand.Parameters.AddWithValue("@anno_emision", documentoExterno.annoEmision);
+            sqlCommand.Parameters.AddWithValue("@version", documentoExterno.version);
+            sqlCommand.Parameters.AddWithValue("@presentacion", documentoExterno.presentacion);
+            sqlCommand.Parameters.AddWithValue("@activo", documentoExterno.activo);
+
+
+
+
+            sqlConnection.Open();
+            int idDocumento = Convert.ToInt32(sqlCommand.ExecuteScalar());
+            sqlConnection.Close();
+
+            return idDocumento;
+        }
+
 
         #endregion
 

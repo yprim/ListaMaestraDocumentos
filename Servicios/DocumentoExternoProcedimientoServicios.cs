@@ -70,6 +70,8 @@ namespace Servicios
             return documentoExternoProcedimientoDatos.procedimientoAsociadoADocumentoExterno(documentoExterno, procedimiento);
 
 
-            #endregion
         }
-}
+        }
+
+        #endregion
+    }

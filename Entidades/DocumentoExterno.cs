@@ -17,6 +17,7 @@ namespace Entidades
         public String nombreDocumento { get; set; }
         public String annoEmision { get; set; }
         public String version { get; set; }
+        public String presentacion { get; set; }
         public Sistema sistema { get; set; }
         public String activo { get; set; }
         public List<Autor> listaAutores { get; set; }
