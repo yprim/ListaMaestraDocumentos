@@ -62,7 +62,7 @@ namespace LMD.Catalogos
             catch (Exception ex)
             {
 
-                //  (this.Master as Site).Mensaje("El autor no puede ser eliminado ya que está siendo utilizado por otra reunión", "¡Alerta!");
+                  (this.Master as SiteMaster).Mensaje("El autor no puede ser eliminado ya que está siendo utilizado por otro registro", "¡Alerta!");
             }
         }
 

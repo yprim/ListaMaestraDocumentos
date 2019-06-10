@@ -63,7 +63,7 @@ namespace LMD.Catalogos
             catch (Exception ex)
             {
 
-              //  (this.Master as Site).Mensaje("El estado no puede ser eliminado ya que está siendo utilizado por otra reunión", "¡Alerta!");
+                (this.Master as SiteMaster).Mensaje("El estado no puede ser eliminado ya que está siendo utilizado por otro registro", "¡Alerta!");
             }
         }
 

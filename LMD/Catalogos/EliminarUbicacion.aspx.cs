@@ -62,7 +62,7 @@ namespace LMD.Catalogos
             catch (Exception ex)
             {
 
-                //  (this.Master as Site).Mensaje("El ubicacion no puede ser eliminado ya que está siendo utilizado por otra reunión", "¡Alerta!");
+                  (this.Master as SiteMaster).Mensaje("La ubicación no puede ser eliminada ya que está siendo utilizada por otro registro", "¡Alerta!");
             }
         }
 
