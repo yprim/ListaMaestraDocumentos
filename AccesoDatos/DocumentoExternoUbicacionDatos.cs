@@ -88,9 +88,9 @@ namespace AccesoDatos
 
             SqlConnection sqlConnection = conexion.conexionLMD();
 
-            SqlCommand sqlCommand = new SqlCommand("select D.id_documento_externo" +
-                "from Documento_Externo_Ubicacion D " +
-                "where D.id_documento_externo = @id_documento_externo and D.id_ubicacion = @id_ubicacion;", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(@"select D.id_documento_externo from Documento_Externo_Ubicacion D 
+            where D.id_documento_externo = @id_documento_externo and D.id_ubicacion = @id_ubicacion;", sqlConnection);
+
 
             sqlCommand.Parameters.AddWithValue("@id_documento_externo", documentoExterno.idDocumentoExterno);
             sqlCommand.Parameters.AddWithValue("@id_ubicacion", ubicacion.idUbicacion);
