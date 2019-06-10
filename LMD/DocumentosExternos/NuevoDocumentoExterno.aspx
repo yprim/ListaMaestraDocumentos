@@ -8,7 +8,8 @@
     <ul class="nav nav-tabs">
         <li id="liDocumentoExterno" runat="server" class="active"><a onclick="verViewDocumentoExterno()">Documento Externo</a></li>
         <li id="liProcedimiento" runat="server"><a onclick="verViewProcedimiento()">Asociar procedimientos</a></li>
-        <li id="liAutor" runat="server"><a onclick="verViewAutores()">Agregar autores de documento</a></li>
+        <li id="liAutor" runat="server"><a onclick="verViewAutores()">Agregar autores</a></li>
+        <li id="liUbicacion" runat="server"><a onclick="verViewUbicaciones()">Agregar ubicaciones</a></li>
     </ul>
     <!-- fin tabs -->
 
@@ -38,9 +39,9 @@
                     <asp:Label ID="lblNombreProcedimiento" runat="server" Text="Nombre Documento<span style='color:red'>*</span> " Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
                 </div>
                 <div class="col-md-4 col-xs-4 col-sm-4">
-                    <asp:TextBox class="form-control" ID="txtNombreProcedimiento" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="txtNombreDocumento" TextMode="MultiLine" runat="server"></asp:TextBox>
                 </div>
-                <div id="divNombreProcedimientoIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
+                <div id="divNombreDocumentoIncorrecto" runat="server" style="display: none" class="col-md-6 col-xs-6 col-sm-6">
                     <asp:Label ID="lblNombreProcedimientoIncorrecto" runat="server" Font-Size="Small" class="label alert-danger" Text="Espacio Obligatorio" ForeColor="Red"></asp:Label>
                 </div>
             </div>
@@ -537,6 +538,215 @@
 
         </div>
     </div>
+    <!-- Fin Confirmar Eliminar Autor -->
+
+    <!--****************************************************************************************** -->
+
+     <!--****************************************************************************************** -->
+    <!-- ------------------------ VISTA Ubicaciones --------------------------- -->
+    <div id="ViewUbicacion" runat="server" style="display: none">
+
+        <div class="divCuadrado">
+            <div class="row">
+
+                <!-- Modal -->
+                <div id="myModalUbicacion" class="modal fade" role="alertdialog">
+                    <div class="modal-dialog modal-lg">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Agregar ubicaciones al documento</h4>
+                            </div>
+                            <div class="modal-body">
+                                <%-- cuerpo modal --%>
+
+                                <div class="row">
+
+                                    <%-- Escoger Ubicaciones --%>
+
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <br />
+                                    </div>
+
+                                    <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
+                                        <asp:Repeater ID="rpUbicacionSinAsociar" runat="server">
+                                            <HeaderTemplate>
+                                                <table id="tblUbicacionSinAsociar" class="row-border table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>Nombre</th>
+
+                                                        </tr>
+                                                    </thead>
+                                            </HeaderTemplate>
+
+                                            <ItemTemplate>
+                                                <tr>
+                                                    <td>
+                                                        <asp:LinkButton ID="btnAsociar" runat="server" ToolTip="Asociar" OnClick="btnAsociarUbicacion_Click" CommandArgument='<%# Eval("idUbicacion") %>'><span class="glyphicon glyphicon-ok-circle"></span></asp:LinkButton>
+                                                    </td>
+                                                    <td>
+                                                        <%# Eval("nombre") %>
+                                                    </td>
+
+                                                </tr>
+                                            </ItemTemplate>
+
+                                            <FooterTemplate>
+                                                <thead>
+                                                    <tr id="filterrow">
+                                                        <td></td>
+                                                        <th>Nombre</th>
+
+                                                    </tr>
+                                                </thead>
+                                                </table>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <br />
+                                    </div>
+
+                                    <%-- fin Escoger Procedimientos--%>
+                                </div>
+
+                                <%-- Fin cuerpo modal --%>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        <!-- Fin Modal content-->
+
+                    </div>
+                </div>
+                <!-- Fin Modal -->
+
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <br />
+                </div>
+
+                <%-- Mostrar Ubicacions Asociados --%>
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                    <center>
+                        <asp:Label ID="lblUbicacionesAsociados" runat="server" Text="Ubicaciones de Documento" Font-Size="Large" ForeColor="Black"></asp:Label>
+                    </center>
+                </div>
+                <%-- fin Mostrar Ubicacions Asociados --%>
+
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <hr />
+                </div>
+
+                <%-- tabla mostar Ubicacions asociados a la reunion --%>
+                <div class="col-md-10 col-xs-10 col-sm-10 col-md-offset-1 col-xs-offset-1 col-sm-offset-1" style="text-align: center; overflow-y: auto;">
+                    <asp:Repeater ID="rpUbicacion" runat="server">
+                        <HeaderTemplate>
+                            <table id="tblUbicacion" class="row-border table-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Nombre</th>
+
+                                    </tr>
+                                </thead>
+                        </HeaderTemplate>
+
+                        <ItemTemplate>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ID="btnDesasociar" runat="server" ToolTip="Desasociar" OnClick="btnDesasociarUbicacion_Click" CommandArgument='<%# Eval("idUbicacion") %>'><span class="glyphicon glyphicon-remove-circle"></span></asp:LinkButton>
+                                </td>
+                                <td>
+                                    <%# Eval("nombre") %>
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+
+                        <FooterTemplate>
+                            <thead>
+                                <tr id="filterrow">
+                                    <td></td>
+                                    <th>Nombre</th>
+
+                                </tr>
+                            </thead>
+                            </table>
+                        </FooterTemplate>
+                    </asp:Repeater>
+                </div>
+
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <br />
+                </div>
+
+                <div class="col-md-3 col-xs-3 col-sm-3 col-md-offset-9 col-xs-offset-9 col-sm-offset-9">
+                    <button id="btnModalUbicacion" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalUbicacion">Asociar</button>
+                </div>
+                <%-- fin tabla mostar ubicaciones asociados al documento--%>
+
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <hr />
+                </div>
+
+                <%-- boton cancelar --%>
+                <div class="col-md-3 col-xs-3 col-sm-3 col-md-offset-9 col-xs-offset-9 col-sm-offset-9">
+                    <asp:Button ID="Button3" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" />
+                    <asp:Button ID="Button4" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClick="btnRegresar_Click" />
+                </div>
+                <%-- fin boton cancelar --%>
+
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <br />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- ------------------------ FIN VISTA Ubicacion --------------------------- -->
+
+
+    <!-- Modal Confirmar Desasociar Ubicaciones -->
+    <div id="modalDesasociarUbicaciones" class="modal fade" role="alertdialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmar</h4>
+                </div>
+                <div class="modal-body">
+                    <%-- campos a llenar --%>
+                    <div class="row">
+
+                        <%-- fin campos a llenar --%>
+
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <br />
+                        </div>
+
+                        <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: center">
+                            <asp:Label ID="lblDesasociarUbicacion" runat="server" Text="¿Está seguro o segura que desea desasociar el ubicacion del documento ?" Font-Size="Medium" ForeColor="Black" CssClass="label"></asp:Label>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer" style="text-align: center">
+                    <asp:Button ID="btnDesasociarUbicacion" runat="server" Text="Si" CssClass="btn btn-primary" OnClick="btnDesasociarUbicacionConfirmar_Click" />
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <!-- Fin Confirmar Eliminar Norma -->
 
     <!--****************************************************************************************** -->
@@ -552,8 +762,11 @@
             $('#modalDesasociarAutores').modal('show');
         };
 
+         function activarModalDesasociarUbicaciones() {
+            $('#modalDesasociarUbicaciones').modal('show');
+        };
 
-        /*tabla Procedimiento asociados*/
+        /*tabla Procedimientos asociados*/
         $('#tblProcedimiento thead tr#filterrow th').each(function () {
             var campoBusqueda = $('#tblProcedimiento thead th').eq($(this).index()).text();
             $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
@@ -699,7 +912,7 @@
 
         ///////////////////////
 
-        /*tabla Autors asociados*/
+        /*tabla Autores asociados*/
         $('#tblAutor thead tr#filterrow th').each(function () {
             var campoBusqueda = $('#tblProcedimiento thead th').eq($(this).index()).text();
             $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
@@ -834,6 +1047,142 @@
         function activarModalAutor() {
             $('#myModalAutor').modal('show');
         };
+        /////////////////////////
+           /*tabla Ubicaciones asociados*/
+        $('#tblUbicacion thead tr#filterrow th').each(function () {
+            var campoBusqueda = $('#tblProcedimiento thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
+        });
+
+        // DataTable
+        var table2 = $('#tblUbicacion').DataTable({
+            orderCellsTop: true,
+            "iDisplayLength": 10,
+            "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
+            "colReorder": true,
+            "select": false,
+            "stateSave": true,
+            "dom": 'Bfrtip',
+            "buttons": [
+                'pdf', 'excel', 'copy', 'print'
+            ],
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "decimal": ",",
+                "thousands": ".",
+                "sSelect": "1 fila seleccionada",
+                "select": {
+                    rows: {
+                        _: "Ha seleccionado %d filas",
+                        0: "Dele click a una fila para seleccionarla",
+                        1: "1 fila seleccionada"
+                    }
+                },
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+        });
+
+        // aplicar filtro
+        $("#tblUbicacion thead input").on('keyup change', function () {
+            table
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+        /*fin tabla Ubicaciones asociados*/
+
+        /*tabla Ubicacion sin asociar*/
+        $('#tblUbicacionSinAsociar thead tr#filterrow th').each(function () {
+            var campoBusqueda = $('#tblUbicacionSinAsociar thead th').eq($(this).index()).text();
+            $(this).html('<input type="text" style="text-align: center" onclick="stopPropagation(event);" placeholder="Buscar ' + campoBusqueda + '" />');
+        });
+
+        // DataTable
+        var tblUbicacionSinAsociar = $('#tblUbicacionSinAsociar').DataTable({
+            orderCellsTop: true,
+            "iDisplayLength": 10,
+            "aLengthMenu": [[2, 5, 10, -1], [2, 5, 10, "All"]],
+            "colReorder": true,
+            "select": false,
+            "stateSave": true,
+            "dom": 'Bfrtip',
+            "buttons": [
+                'pdf', 'excel', 'copy', 'print'
+            ],
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "decimal": ",",
+                "thousands": ".",
+                "sSelect": "1 fila seleccionada",
+                "select": {
+                    rows: {
+                        _: "Ha seleccionado %d filas",
+                        0: "Dele click a una fila para seleccionarla",
+                        1: "1 fila seleccionada"
+                    }
+                },
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+        });
+
+        // aplicar filtro
+        $("#tblUbicacionSinAsociar thead input").on('keyup change', function () {
+            tblUbicacionSinAsociar
+                .column($(this).parent().index() + ':visible')
+                .search(this.value)
+                .draw();
+        });
+        /*fin tabla Ubicaciones sin asociadas*/
+
+
+
+        $('#tblUbicacion tbody').on('click', 'tr', function () {
+            var prueba = table.row(this).data();
+        });
+
+        function activarModalUbicacion() {
+            $('#myModalUbicacion').modal('show');
+        };
 
 
     </script>
@@ -847,37 +1196,56 @@
             document.getElementById('<%=liProcedimiento.ClientID%>').className = "active";
             document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
             document.getElementById('<%=liAutor.ClientID%>').className = "";
-
+            document.getElementById('<%=liUbicacion.ClientID%>').className = "";
 
 
             document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'block';
             document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'none';
             document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'none';
-
+                    document.getElementById('<%=ViewUbicacion.ClientID%>').style.display = 'none';
         };
 
         function verViewDocumentoExterno() {
             document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "active";
             document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
             document.getElementById('<%=liAutor.ClientID%>').className = "";
+            document.getElementById('<%=liUbicacion.ClientID%>').className = "";
 
 
             document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'block';
             document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
             document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'none';
-
+             document.getElementById('<%=ViewUbicacion.ClientID%>').style.display = 'none';
         };
 
         function verViewAutores() {
             document.getElementById('<%=liAutor.ClientID%>').className = "active";
             document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
             document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
+            document.getElementById('<%=liUbicacion.ClientID%>').className = "";
 
 
 
             document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'block';
             document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'none';
             document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
+             document.getElementById('<%=ViewUbicacion.ClientID%>').style.display = 'none';
+
+        };
+
+        
+        function verViewUbicaciones() {
+            document.getElementById('<%=liUbicacion.ClientID%>').className = "active";
+            document.getElementById('<%=liDocumentoExterno.ClientID%>').className = "";
+            document.getElementById('<%=liProcedimiento.ClientID%>').className = "";
+            document.getElementById('<%=liAutor.ClientID%>').className = "";
+
+
+
+            document.getElementById('<%=ViewUbicacion.ClientID%>').style.display = 'block';
+            document.getElementById('<%=ViewDocumentoExterno.ClientID%>').style.display = 'none';
+            document.getElementById('<%=ViewProcedimiento.ClientID%>').style.display = 'none';
+            document.getElementById('<%=ViewAutor.ClientID%>').style.display = 'none';
 
         };
 
@@ -887,8 +1255,8 @@
         function validarTexto(txtBox) {
             var id = txtBox.id.substring(12);
 
-            if (id == "txtNombreProcedimiento") {
-                var nombreProcedimientoIncorrecto = document.getElementById('<%= divNombreProcedimientoIncorrecto.ClientID %>');
+            if (id == "txtNombreDocumento") {
+                var nombreProcedimientoIncorrecto = document.getElementById('<%= divNombreDocumentoIncorrecto.ClientID %>');
                 if (txtBox.value != "") {
                     txtBox.className = "form-control";
 

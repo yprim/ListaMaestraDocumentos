@@ -15,8 +15,10 @@ namespace LMD.DocumentosExternos
         DocumentoExternoServicios documentoExternoServicios = new DocumentoExternoServicios();
         ProcedimientoServicios procedimientoServicios = new ProcedimientoServicios();
         AutorServicios autorServicios = new AutorServicios();
+        UbicacionServicios ubicacionServicios = new UbicacionServicios();
         DocumentoExternoAutorServicios documentoExternoAutorServicios =  new DocumentoExternoAutorServicios();
         DocumentoExternoProcedimientoServicios documentoExternoProcedimientoServicios = new DocumentoExternoProcedimientoServicios();
+        DocumentoExternoUbicacionServicios documentoExternoUbicacionServicios = new DocumentoExternoUbicacionServicios();
         #endregion
 
         #region pageload
@@ -38,6 +40,9 @@ namespace LMD.DocumentosExternos
                 Session["listaAutoresNoAsociados"] = null;
                 Session["listaAutoresAsociados"] = null;
                 Session["idAutorDesasociar"] = null;
+                Session["listaUbicacionesNoAsociadas"] = null;
+                Session["listaUbicacionesAsociadas"] = null;
+                Session["idUbicacionDesasociar"] = null;
 
 
                 llenarDatos();
@@ -158,6 +163,118 @@ namespace LMD.DocumentosExternos
             rpAutor.DataSource = listaAutoresAsociados;
             rpAutor.DataBind();
 
+            /*
+         * se llena la lista con los ubicaciones que NO estan asociadas al documento externo
+         */
+
+            List<Ubicacion> listaUbicacionesNoAsociadas = new List<Ubicacion>();
+
+            if (Session["listaUbicacionesNoAsociadas"] == null)
+            {
+                listaUbicacionesNoAsociadas = ubicacionServicios.getUbicacionesNoEstanEnDocumentoExterno(documentoExterno);
+            }
+            else
+            {
+                listaUbicacionesNoAsociadas = (List<Ubicacion>)Session["listaUbicacionesNoAsociadas"];
+            }
+
+            Session["listaUbicacionesNoAsociadas"] = listaUbicacionesNoAsociadas;
+
+            rpUbicacionSinAsociar.DataSource = listaUbicacionesNoAsociadas;
+            rpUbicacionSinAsociar.DataBind();
+
+            /*
+             * se llena la tabla de ubicaciones que estan asociadas al documento externo
+             */
+
+            List<Ubicacion> listaUbicacionesAsociadas = new List<Ubicacion>();
+
+            if (Session["listaUbicacionesAsociadas"] == null)
+            {
+
+                listaUbicacionesAsociadas = ubicacionServicios.getUbicacionesEstanEnDocumentoExterno(documentoExterno);
+
+                Session["listaUbicacionesAsociadas"] = listaUbicacionesAsociadas;
+            }
+            else
+            {
+                listaUbicacionesAsociadas = (List<Ubicacion>)Session["listaUbicacionesAsociadas"];
+            }
+
+            rpUbicacion.DataSource = listaUbicacionesAsociadas;
+            rpUbicacion.DataBind();
+
+        
+
+    }
+
+        /// <summary>
+        /// Priscilla Mena Monge
+        /// 25/04/2019
+        /// Efecto:Metodo que valida los campos que debe ingresar el usuario
+        /// devuelve true si todos los campos esta con datos correctos
+        /// sino devuelve false y marcar lo campos para que el usuario vea cuales son los campos que se encuentran mal
+        /// Requiere: -
+        /// Modifica: -
+        /// Devuelve: -
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean validarCampos()
+        {
+            Boolean validados = true;
+
+            txtNombreDocumento.CssClass = "form-control";
+            divNombreDocumentoIncorrecto.Style.Add("display", "none");
+            txtVersion.CssClass = "form-control";
+            divVersionIncorrecto.Style.Add("display", "none");
+
+
+            #region validacion Nombre Procedimiento
+
+            String nombreProcedimiento = txtNombreDocumento.Text;
+            String version = txtVersion.Text;
+
+            if (nombreProcedimiento.Trim() == "")
+            {
+                txtNombreDocumento.CssClass = "form-control alert-danger";
+                divNombreDocumentoIncorrecto.Style.Add("display", "block");
+
+                validados = false;
+
+            }
+           
+            if (version.Trim() == "")
+            {
+                txtVersion.CssClass = "form-control alert-danger";
+                divVersionIncorrecto.Style.Add("display", "block");
+
+                validados = false;
+
+
+          
+
+            }
+
+            if (!validados)
+            {
+                /*para que se quede en el tab  donde no puso datos*/
+                liDocumentoExterno.Attributes["class"] = "active";
+                liProcedimiento.Attributes["class"] = "";
+                liAutor.Attributes["class"] = "";
+                liUbicacion.Attributes["class"] = "";
+
+
+                ViewUbicacion.Style.Add("display", "none");
+                ViewDocumentoExterno.Style.Add("display", "block");
+                ViewAutor.Style.Add("display", "none");
+                ViewProcedimiento.Style.Add("display", "none");
+
+            }
+          
+            #endregion
+
+            return validados;
         }
 
 
@@ -239,10 +356,12 @@ namespace LMD.DocumentosExternos
             /*para que se quede en el tab de Procedimiento despues del posback*/
             liDocumentoExterno.Attributes["class"] = "";
             liAutor.Attributes["class"] = "";
+            liUbicacion.Attributes["class"] = "";
             liProcedimiento.Attributes["class"] = "active";
 
 
             ViewProcedimiento.Style.Add("display", "block");
+            ViewUbicacion.Style.Add("display", "none");
             ViewDocumentoExterno.Style.Add("display", "none");
             ViewAutor.Style.Add("display", "none");
 
@@ -321,16 +440,103 @@ namespace LMD.DocumentosExternos
             /*para que se quede en el tab de Autors despues del posback*/
             liDocumentoExterno.Attributes["class"] = "";
             liProcedimiento.Attributes["class"] = "";
+            liUbicacion.Attributes["class"] = "";
             liAutor.Attributes["class"] = "active";
 
 
             ViewAutor.Style.Add("display", "block");
             ViewDocumentoExterno.Style.Add("display", "none");
+            ViewUbicacion.Style.Add("display", "none");
             ViewProcedimiento.Style.Add("display", "none");
 
 
             ClientScript.RegisterStartupScript(GetType(), "activar", "activarModalAutor();", true);
         }
+
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/09/2018
+        /// Efecto:Metodo que se activa cuando se le da click al boton de asociar
+        /// Requiere: -
+        /// Modifica: -
+        /// Devuelve: -
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        protected void btnAsociarUbicacion_Click(object sender, EventArgs e)
+        {
+            DocumentoExterno DocumentoExterno = new DocumentoExterno();
+
+            List<Ubicacion> listaUbicacionesNoAsociadas = (List<Ubicacion>)Session["listaUbicacionesNoAsociadas"];
+            List<Ubicacion> listaUbicacionsSeleccionados = new List<Ubicacion>();
+
+            int idUbicacion = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
+
+            Ubicacion Ubicacion = new Ubicacion();
+
+            foreach (Ubicacion ubicacionLista in listaUbicacionesNoAsociadas)
+            {
+                if (ubicacionLista.idUbicacion == idUbicacion)
+                {
+                    Ubicacion = ubicacionLista;
+
+                    break;
+                }
+            }
+
+            listaUbicacionsSeleccionados.Add(Ubicacion);
+
+            List<Ubicacion> listaUbicacionesAsociadas = (List<Ubicacion>)Session["listaUbicacionesAsociadas"];
+
+            foreach (Ubicacion ubicacionLista in listaUbicacionsSeleccionados)
+            {
+                listaUbicacionesAsociadas.Add(ubicacionLista);
+            }
+
+            List<Ubicacion> listaUbicacionNoAsociadosTemp = new List<Ubicacion>();
+
+            foreach (Ubicacion ubicacionNoAsociado in listaUbicacionesNoAsociadas)
+            {
+                Boolean asociar = true;
+                foreach (Ubicacion ubicacionLista in listaUbicacionsSeleccionados)
+                {
+                    if (ubicacionLista.idUbicacion == ubicacionNoAsociado.idUbicacion)
+                    {
+                        asociar = false;
+                        break;
+                    }
+                }
+
+                if (asociar)
+                {
+                    listaUbicacionNoAsociadosTemp.Add(ubicacionNoAsociado);
+                }
+
+            }
+
+            Session["listaUbicacionesNoAsociadas"] = listaUbicacionNoAsociadosTemp;
+            Session["listaUbicacionesAsociadas"] = listaUbicacionesAsociadas;
+
+            llenarDatos();
+
+            /*para que se quede en el tab de Ubicacions despues del posback*/
+            liDocumentoExterno.Attributes["class"] = "";
+            liProcedimiento.Attributes["class"] = "";
+            liAutor.Attributes["class"] = "";
+            liUbicacion.Attributes["class"] = "active";
+
+
+            ViewUbicacion.Style.Add("display", "block");
+            ViewDocumentoExterno.Style.Add("display", "none");
+            ViewProcedimiento.Style.Add("display", "none");
+            ViewAutor.Style.Add("display", "none");
+
+
+            ClientScript.RegisterStartupScript(GetType(), "activar", "activarModalUbicacion();", true);
+        }
+
+
 
         /// <summary>
         /// Priscilla Mena
@@ -365,12 +571,14 @@ namespace LMD.DocumentosExternos
             /*para que se quede en el tab de Procedimiento despues del posback*/
             liDocumentoExterno.Attributes["class"] = "";
             liAutor.Attributes["class"] = "";
+            liUbicacion.Attributes["class"] = "";
             liProcedimiento.Attributes["class"] = "active";
 
 
             ViewProcedimiento.Style.Add("display", "block");
             ViewDocumentoExterno.Style.Add("display", "none");
             ViewAutor.Style.Add("display", "none");
+            ViewUbicacion.Style.Add("display", "none");
 
         }
 
@@ -408,100 +616,59 @@ namespace LMD.DocumentosExternos
             liDocumentoExterno.Attributes["class"] = "";
             liProcedimiento.Attributes["class"] = "";
             liAutor.Attributes["class"] = "active";
+            liUbicacion.Attributes["class"] = "";
 
 
             ViewAutor.Style.Add("display", "block");
             ViewProcedimiento.Style.Add("display", "none");
             ViewDocumentoExterno.Style.Add("display", "none");
-
+            ViewUbicacion.Style.Add("display", "none");
         }
 
         /// <summary>
         /// Priscilla Mena
         /// 27/09/2018
-        /// Efecto:Metodo que se activa cuando se le da click al boton de guardar
-        /// y guarda un registro en la base de datos
-        /// redireccion a la pantalla de Administracion de DocumentoExternos
+        /// Efecto:Metodo que se activa modal de confirmacion para desasociar ubicaciones
         /// Requiere: -
         /// Modifica: -
         /// Devuelve: -
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        protected void btnGuardar_Click(object sender, EventArgs e)
+        protected void btnDesasociarUbicacion_Click(object sender, EventArgs e)
         {
+            ClientScript.RegisterStartupScript(GetType(), "activar", "activarModalDesasociarUbicaciones();", true);
 
-            Sistema sistema = new Sistema();
-            sistema = (Sistema)Session["sistema"];
+            int idUbicacion = Convert.ToInt32((((LinkButton)(sender)).CommandArgument).ToString());
 
+            Session["idUbicacionDesasociar"] = idUbicacion;
 
-            DocumentoExterno documentoExterno = new DocumentoExterno();
-            documentoExterno.presentacion = ddlPresentacion.SelectedItem.Text;
-            documentoExterno.annoEmision = txtAnno.Text;
-            documentoExterno.activo = "1";
-            documentoExterno.nombreDocumento = txtNombreProcedimiento.Text;
-            documentoExterno.version = txtVersion.Text;
-            documentoExterno.sistema = sistema;
+            List<Ubicacion> listaUbicacionesAsociadas = (List<Ubicacion>)Session["listaUbicacionesAsociadas"];
 
+            List<Ubicacion> listaUbicacionsSeleccionados = new List<Ubicacion>();
 
-
-            documentoExterno.idDocumentoExterno = documentoExternoServicios.insertarDocumentoExterno(documentoExterno);
-
-
-            /*----------------------Asociar procedimientos ----------------------------------------*/
-
-            List<Procedimiento> listaProcedimientosAsociados = (List<Procedimiento>)Session["listaProcedimientosAsociados"];
-
-            foreach (Procedimiento procedimiento in listaProcedimientosAsociados)
+            foreach (Ubicacion Ubicacion in listaUbicacionesAsociadas)
             {
-                if (!documentoExternoProcedimientoServicios.procedimientoAsociadoADocumentoExterno(documentoExterno, procedimiento))
+                if (Ubicacion.idUbicacion == idUbicacion)
                 {
-                    documentoExternoProcedimientoServicios.insertarDocumentoExternoProcedimiento(documentoExterno, procedimiento);
+                    lblDesasociarUbicacion.Text = "Se desasociará el Ubicacion: " + Ubicacion.nombre + " <br /> ¿está de acuerdo?";
                 }
             }
 
-            List<Procedimiento> listaProcedimientosNoAsociados = (List<Procedimiento>)Session["listaProcedimientosNoAsociados"];
+            /*para que se quede en el tab de Ubicacion despues del posback*/
+            liDocumentoExterno.Attributes["class"] = "";
+            liProcedimiento.Attributes["class"] = "";
+            liAutor.Attributes["class"] = "";
+            liUbicacion.Attributes["class"] = "active";
 
-            foreach (Procedimiento Procedimiento in listaProcedimientosNoAsociados)
-            {
-                if (documentoExternoProcedimientoServicios.procedimientoAsociadoADocumentoExterno(documentoExterno, Procedimiento))
-                {
-                    documentoExternoProcedimientoServicios.eliminarDocumentoExternoProcedimiento(documentoExterno, Procedimiento);
-                }
-            }
 
-            /*--------------------- Fin-Asociar Elementos----------------------------------------*/
-
-            /*----------------------Asociar procedimientos a revisar----------------------------------------*/
-
-            List<Autor> listaAutoresAsociados = (List<Autor>)Session["listaAutoresAsociados"];
-
-            foreach (Autor Autor in listaAutoresAsociados)
-            {
-                if (!documentoExternoAutorServicios.autorAsociadoADocumentoExterno(documentoExterno, Autor))
-                {
-                    documentoExternoAutorServicios.insertarDocumentoExternoAutor(documentoExterno, Autor);
-                }
-            }
-
-            List<Autor> listaAutoresNoAsociados = (List<Autor>)Session["listaAutoresNoAsociados"];
-
-            foreach (Autor Autor in listaAutoresNoAsociados)
-            {
-                if (documentoExternoAutorServicios.autorAsociadoADocumentoExterno(documentoExterno, Autor))
-                {
-                    documentoExternoAutorServicios.eliminarDocumentoExternoAutor(documentoExterno, Autor);
-                }
-            }
-
-            /*--------------------- Fin-Asociar Autors----------------------------------------*/
-
-        
-
-            String url = Page.ResolveUrl("~/DocumentosExternos/AdministrarDocumentoExterno.aspx");
-            Response.Redirect(url);
+            ViewUbicacion.Style.Add("display", "block");
+            ViewProcedimiento.Style.Add("display", "none");
+            ViewAutor.Style.Add("display", "none");
+            ViewDocumentoExterno.Style.Add("display", "none");
 
         }
+
 
         /// <summary>
         /// Priscilla Mena
@@ -663,13 +830,205 @@ namespace LMD.DocumentosExternos
             liDocumentoExterno.Attributes["class"] = "";
             liProcedimiento.Attributes["class"] = "";
             liAutor.Attributes["class"] = "active";
-
+          
 
             ViewAutor.Style.Add("display", "block");
             ViewDocumentoExterno.Style.Add("display", "none");
             ViewProcedimiento.Style.Add("display", "none");
         }
 
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/09/2018
+        /// Efecto: Desasocia ubicacion del documentoExterno 
+        /// y elimina el registro en la base de datos
+        /// vuelve a levantar el modal
+        /// Requiere: -
+        /// Modifica: -
+        /// Devuelve: -
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        protected void btnDesasociarUbicacionConfirmar_Click(object sender, EventArgs e)
+        {
+            int idUbicacion = (int)Session["idUbicacionDesasociar"];
+
+            Ubicacion Ubicacion = new Ubicacion();
+
+            Ubicacion.idUbicacion = idUbicacion;
+
+            List<Ubicacion> listaUbicacionesAsociadas = (List<Ubicacion>)Session["listaUbicacionesAsociadas"];
+
+            List<Ubicacion> listaUbicacionsSeleccionados = new List<Ubicacion>();
+
+            foreach (Ubicacion Ubicacions in listaUbicacionesAsociadas)
+            {
+                if (Ubicacions.idUbicacion == Ubicacion.idUbicacion)
+                {
+                    listaUbicacionsSeleccionados.Add(Ubicacions);
+                }
+            }
+
+            List<Ubicacion> listaUbicacionesNoAsociadas = (List<Ubicacion>)Session["listaUbicacionesNoAsociadas"];
+            List<Ubicacion> listaUbicacionesAsociadasTemp = new List<Ubicacion>();
+
+            foreach (Ubicacion Ubicacions in listaUbicacionsSeleccionados)
+            {
+                listaUbicacionesNoAsociadas.Add(Ubicacions);
+            }
+
+            foreach (Ubicacion UbicacionAsociado in listaUbicacionesAsociadas)
+            {
+                Boolean asociar = true;
+                foreach (Ubicacion Ubicacions in listaUbicacionsSeleccionados)
+                {
+                    if (UbicacionAsociado.idUbicacion == Ubicacions.idUbicacion)
+                    {
+                        asociar = false;
+                        break;
+                    }
+                }
+
+                if (asociar)
+                {
+                    listaUbicacionesAsociadasTemp.Add(UbicacionAsociado);
+                }
+            }
+
+            Session["listaUbicacionesAsociadas"] = listaUbicacionesAsociadasTemp;
+            Session["listaUbicacionesNoAsociadas"] = listaUbicacionesNoAsociadas;
+
+            llenarDatos();
+
+            /*para que se quede en el tab de Ubicacions despues del posback*/
+            liDocumentoExterno.Attributes["class"] = "";
+            liProcedimiento.Attributes["class"] = "";
+            liAutor.Attributes["class"] = "";
+            liUbicacion.Attributes["class"] = "active";
+
+
+            ViewUbicacion.Style.Add("display", "block");
+            ViewDocumentoExterno.Style.Add("display", "none");
+            ViewAutor.Style.Add("display", "none");
+            ViewProcedimiento.Style.Add("display", "none");
+        }
+
+
+        /// <summary>
+        /// Priscilla Mena
+        /// 27/09/2018
+        /// Efecto:Metodo que se activa cuando se le da click al boton de guardar
+        /// y guarda un registro en la base de datos
+        /// redireccion a la pantalla de Administracion de DocumentoExternos
+        /// Requiere: -
+        /// Modifica: -
+        /// Devuelve: -
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //se validan los campos antes de guardar los datos en la base de datos
+            if (validarCampos())
+            {
+                Sistema sistema = new Sistema();
+                sistema = (Sistema)Session["sistema"];
+
+
+                DocumentoExterno documentoExterno = new DocumentoExterno();
+                documentoExterno.presentacion = ddlPresentacion.SelectedItem.Text;
+                documentoExterno.annoEmision = txtAnno.Text;
+                documentoExterno.activo = "1";
+                documentoExterno.nombreDocumento = txtNombreDocumento.Text;
+                documentoExterno.version = txtVersion.Text;
+                documentoExterno.sistema = sistema;
+
+
+
+                documentoExterno.idDocumentoExterno = documentoExternoServicios.insertarDocumentoExterno(documentoExterno);
+
+
+                /*----------------------Asociar procedimientos ----------------------------------------*/
+
+                List<Procedimiento> listaProcedimientosAsociados = (List<Procedimiento>)Session["listaProcedimientosAsociados"];
+
+                foreach (Procedimiento procedimiento in listaProcedimientosAsociados)
+                {
+                    if (!documentoExternoProcedimientoServicios.procedimientoAsociadoADocumentoExterno(documentoExterno, procedimiento))
+                    {
+                        documentoExternoProcedimientoServicios.insertarDocumentoExternoProcedimiento(documentoExterno, procedimiento);
+                    }
+                }
+
+                List<Procedimiento> listaProcedimientosNoAsociados = (List<Procedimiento>)Session["listaProcedimientosNoAsociados"];
+
+                foreach (Procedimiento Procedimiento in listaProcedimientosNoAsociados)
+                {
+                    if (documentoExternoProcedimientoServicios.procedimientoAsociadoADocumentoExterno(documentoExterno, Procedimiento))
+                    {
+                        documentoExternoProcedimientoServicios.eliminarDocumentoExternoProcedimiento(documentoExterno, Procedimiento);
+                    }
+                }
+
+                /*--------------------- Fin-Asociar Procedimientos----------------------------------------*/
+
+                /*----------------------Asociar autores----------------------------------------*/
+
+                List<Autor> listaAutoresAsociados = (List<Autor>)Session["listaAutoresAsociados"];
+
+                foreach (Autor Autor in listaAutoresAsociados)
+                {
+                    if (!documentoExternoAutorServicios.autorAsociadoADocumentoExterno(documentoExterno, Autor))
+                    {
+                        documentoExternoAutorServicios.insertarDocumentoExternoAutor(documentoExterno, Autor);
+                    }
+                }
+
+                List<Autor> listaAutoresNoAsociados = (List<Autor>)Session["listaAutoresNoAsociados"];
+
+                foreach (Autor autor in listaAutoresNoAsociados)
+                {
+                    if (documentoExternoAutorServicios.autorAsociadoADocumentoExterno(documentoExterno, autor))
+                    {
+                        documentoExternoAutorServicios.eliminarDocumentoExternoAutor(documentoExterno, autor);
+                    }
+                }
+
+                /*--------------------- Fin-Asociar Autores----------------------------------------*/
+
+                /*----------------------Asociar ubicaciones----------------------------------------*/
+
+                List<Ubicacion> listaUbicacionesAsociadas = (List<Ubicacion>)Session["listaUbicacionesAsociadas"];
+
+                foreach (Ubicacion Ubicacion in listaUbicacionesAsociadas)
+                {
+                    if (!documentoExternoUbicacionServicios.ubicacionAsociadaADocumentoExterno(documentoExterno, Ubicacion))
+                    {
+                        documentoExternoUbicacionServicios.insertarDocumentoExternoUbicacion(documentoExterno, Ubicacion);
+                    }
+                }
+
+                List<Ubicacion> listaUbicacionesNoAsociadas = (List<Ubicacion>)Session["listaUbicacionesNoAsociadas"];
+
+                foreach (Ubicacion ubicacion in listaUbicacionesNoAsociadas)
+                {
+                    if (documentoExternoUbicacionServicios.ubicacionAsociadaADocumentoExterno(documentoExterno, ubicacion))
+                    {
+                        documentoExternoUbicacionServicios.eliminarDocumentoExternoUbicacion(documentoExterno, ubicacion);
+                    }
+                }
+
+                /*--------------------- Fin-Asociar Ubicaciones----------------------------------------*/
+
+
+
+
+                String url = Page.ResolveUrl("~/DocumentosExternos/AdministrarDocumentoExterno.aspx");
+                Response.Redirect(url);
+            }
+
+        }
 
 
         /// <summary>

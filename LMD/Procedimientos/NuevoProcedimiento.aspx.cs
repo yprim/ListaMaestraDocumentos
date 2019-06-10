@@ -124,6 +124,15 @@ namespace LMD.Procedimientos
             divNombreProcedimientoIncorrecto.Style.Add("display", "none");
             txtCodigo.CssClass = "form-control";
             divCodigoIncorrecto.Style.Add("display", "none");
+            txtVersion.CssClass = "form-control";
+            divVersionIncorrecto.Style.Add("display", "none");
+            txtsustituyeA.CssClass = "form-control";
+            divsustituyeAIncorrecto.Style.Add("display", "none");
+            txtdistribuidoA.CssClass = "form-control";
+            divdistribuidoAIncorrecto.Style.Add("display", "none");
+            txtReferenciaAdicional.CssClass = "form-control";
+            divReferenciaAdicionalIncorrecto.Style.Add("display", "none");
+
 
 
             #region validacion Nombre Procedimiento
@@ -131,6 +140,9 @@ namespace LMD.Procedimientos
             String nombreProcedimiento = txtNombreProcedimiento.Text;
             String codigo = txtCodigo.Text;
             String version = txtVersion.Text;
+            String sustituye = txtsustituyeA.Text;
+            String distribuido = txtdistribuidoA.Text;
+            String referencia = txtReferenciaAdicional.Text;
 
             if (nombreProcedimiento.Trim() == "")
             {
@@ -147,7 +159,7 @@ namespace LMD.Procedimientos
                 validados = false;
 
             }
-            if (codigo.Trim() == "")
+            if (version.Trim() == "")
             {
                 txtVersion.CssClass = "form-control alert-danger";
                 divVersionIncorrecto.Style.Add("display", "block");
@@ -155,7 +167,7 @@ namespace LMD.Procedimientos
                 validados = false;
 
             }
-            if (codigo.Trim() == "")
+            if (sustituye.Trim() == "")
             {
                 txtsustituyeA.CssClass = "form-control alert-danger";
                 divsustituyeAIncorrecto.Style.Add("display", "block");
@@ -163,7 +175,7 @@ namespace LMD.Procedimientos
                 validados = false;
 
             }
-            if (codigo.Trim() == "")
+            if (distribuido.Trim() == "")
             {
                 txtdistribuidoA.CssClass = "form-control alert-danger";
                 divdistribuidoAIncorrecto.Style.Add("display", "block");
@@ -171,7 +183,7 @@ namespace LMD.Procedimientos
                 validados = false;
 
             }
-            if (codigo.Trim() == "")
+            if (referencia.Trim() == "")
             {
                 txtReferenciaAdicional.CssClass = "form-control alert-danger";
                 divReferenciaAdicionalIncorrecto.Style.Add("display", "block");

@@ -197,7 +197,7 @@ namespace AccesoDatos
 
             SqlCommand sqlCommand = new SqlCommand(@"select U.id_ubicacion,U.nombre_ubicacion
                from Ubicacion U,Documento_Externo_Ubicacion DU 
-                where DU.id_documento_externo = @id_documento_externo  and U.id_udicacion = DU.id_ubicacion
+                where DU.id_documento_externo = @id_documento_externo  and U.id_ubicacion = DU.id_ubicacion
                  order by U.nombre_ubicacion;", sqlConnection);
 
             SqlDataReader reader;

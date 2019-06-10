@@ -40,6 +40,15 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAutor;
         
         /// <summary>
+        /// Control liUbicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liUbicacion;
+        
+        /// <summary>
         /// Control ViewDocumentoExterno.
         /// </summary>
         /// <remarks>
@@ -67,22 +76,22 @@ namespace LMD.DocumentosExternos {
         protected global::System.Web.UI.WebControls.Label lblNombreProcedimiento;
         
         /// <summary>
-        /// Control txtNombreProcedimiento.
+        /// Control txtNombreDocumento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreProcedimiento;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDocumento;
         
         /// <summary>
-        /// Control divNombreProcedimientoIncorrecto.
+        /// Control divNombreDocumentoIncorrecto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNombreProcedimientoIncorrecto;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNombreDocumentoIncorrecto;
         
         /// <summary>
         /// Control lblNombreProcedimientoIncorrecto.
@@ -326,5 +335,77 @@ namespace LMD.DocumentosExternos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDesasociarAutor;
+        
+        /// <summary>
+        /// Control ViewUbicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ViewUbicacion;
+        
+        /// <summary>
+        /// Control rpUbicacionSinAsociar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpUbicacionSinAsociar;
+        
+        /// <summary>
+        /// Control lblUbicacionesAsociados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUbicacionesAsociados;
+        
+        /// <summary>
+        /// Control rpUbicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpUbicacion;
+        
+        /// <summary>
+        /// Control Button3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
+        
+        /// <summary>
+        /// Control Button4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button4;
+        
+        /// <summary>
+        /// Control lblDesasociarUbicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDesasociarUbicacion;
+        
+        /// <summary>
+        /// Control btnDesasociarUbicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDesasociarUbicacion;
     }
 }
